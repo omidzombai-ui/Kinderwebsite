@@ -25,12 +25,11 @@ Maatschappelijke impact; De website moet veilig, toegankelijk en kindvriendelijk
 - Rekening houden met privacy en veiligheid bij het verwerken van berichten.
 
 ## Kerntaken / Werkprocessen
-B1-K1-W1
-B1-K1-W2
-B1-K2-W1
+* B1-K1-W1
+* B1-K1-W2
+* B1-K2-W1
 
 
 
-28-10-26
-04-11-26
+28-10-26 tot 04-11-26
 
