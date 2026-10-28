@@ -9,6 +9,10 @@ function werkAdresveldenBij() {
         'input[name="bezorging"]:checked'
     );
 
+    if (!gekozenOptie || !adresvelden) {
+        return;
+    }
+
     const kiestKaart = gekozenOptie.value === "kaart";
 
     adresvelden.hidden = !kiestKaart;
