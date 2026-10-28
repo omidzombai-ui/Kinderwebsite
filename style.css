@@ -1,0 +1,93 @@
+/* Padding en randen tellen mee binnen de breedte van elementen. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #422b19;
+    background-color: #eaf3dc;
+}
+
+/* Naam van de website en navigatie */
+header {
+    padding: 24px;
+    text-align: center;
+    background-color: #f5dfb3;
+}
+
+header p {
+    margin: 0 0 16px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+nav a {
+    color: #422b19;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    color: #286334;
+    text-decoration: underline;
+}
+
+nav a:focus-visible {
+    outline: 3px solid #286334;
+    outline-offset: 5px;
+}
+
+/* Welkomstgedeelte */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    max-width: 600px;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: #fff7e5;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: clamp(32px, 6vw, 48px);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Op kleine schermen gebruiken we kleinere afstanden. */
+@media (max-width: 600px) {
+    header {
+        padding: 20px 16px;
+    }
+
+    main {
+        padding: 24px 16px;
+    }
+
+    section {
+        padding: 24px;
+    }
+}
