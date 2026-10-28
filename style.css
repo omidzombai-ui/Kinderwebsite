@@ -146,3 +146,41 @@ legend {
     flex: 1 1 140px;
     margin-bottom: 0;
 }
+
+.dieren {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.dieroptie {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 16px;
+    border: 2px solid #826b45;
+    border-radius: 12px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.dieroptie input {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+    accent-color: #286334;
+}
+
+.dieroptie:has(input:checked) {
+    border-color: #286334;
+    background-color: #eaf3dc;
+}
+
+@media (max-width: 400px) {
+    .dieren {
+        grid-template-columns: 1fr;
+    }
+}
