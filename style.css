@@ -91,3 +91,58 @@ footer {
         padding: 24px;
     }
 }
+
+.aanmelden {
+    margin-top: 32px;
+}
+
+.formulierveld {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #826b45;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #422b19;
+    font: inherit;
+}
+
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #286334;
+    outline-offset: 3px;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0 0 20px;
+    padding: 16px;
+    border: 2px solid #826b45;
+    border-radius: 8px;
+}
+
+legend {
+    padding: 0 8px;
+    font-weight: bold;
+}
+
+.datumvelden {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.datumvelden .formulierveld {
+    flex: 1 1 140px;
+    margin-bottom: 0;
+}
