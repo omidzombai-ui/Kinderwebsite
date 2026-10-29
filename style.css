@@ -1,4 +1,4 @@
-/* Padding en randen tellen mee binnen de breedte van elementen. */
+/* Algemene instellingen */
 * {
     box-sizing: border-box;
 }
@@ -13,14 +13,20 @@ body {
 
 /* Naam van de website en navigatie */
 header {
-    padding: 24px;
+    padding: 24px 20px;
     text-align: center;
-    background-color: #f5dfb3;
+    background-color: #eaf3dc;
 }
 
-header p {
-    margin: 0 0 16px;
-    font-size: 36px;
+header .logo {
+    display: inline-block;
+    margin: 0 0 24px;
+    padding: 12px 36px;
+    border: 3px solid #986235;
+    border-radius: 24px;
+    background-color: #f5d49c;
+    box-shadow: 0 5px 0 #986235;
+    font-size: clamp(28px, 5vw, 44px);
     font-weight: bold;
 }
 
@@ -29,18 +35,33 @@ nav {
     justify-content: center;
     flex-wrap: wrap;
     gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    border: 2px solid #b78852;
+    border-radius: 16px;
+    background-color: #f5dfb3;
+    box-shadow: 0 4px 8px rgb(66 43 25 / 15%);
 }
 
 nav a {
+    padding: 8px 12px;
+    border-radius: 8px;
     color: #422b19;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover,
+nav a:hover {
+    color: #286334;
+    background-color: #ead09f;
+    text-decoration: underline;
+}
+
 nav a[aria-current="page"] {
     color: #286334;
     text-decoration: underline;
+    text-underline-offset: 6px;
 }
 
 nav a:focus-visible {
@@ -48,7 +69,7 @@ nav a:focus-visible {
     outline-offset: 5px;
 }
 
-/* Welkomstgedeelte */
+/* Hoofdinhoud */
 main {
     max-width: 1100px;
     margin: 0 auto;
@@ -72,28 +93,43 @@ h2 {
     font-size: 24px;
 }
 
-footer {
-    padding: 20px;
+/* Welkomstgedeelte */
+.welkom {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 32px;
+    max-width: none;
+    min-height: 350px;
+}
+
+.welkom-tekst,
+.welkom-afbeelding {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.welkom-afbeelding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    padding: 24px;
+    border: 2px dashed #826b45;
+    border-radius: 16px;
+    background-color: #eaf3dc;
     text-align: center;
 }
 
-/* Op kleine schermen gebruiken we kleinere afstanden. */
-@media (max-width: 600px) {
-    header {
-        padding: 20px 16px;
-    }
-
-    main {
-        padding: 24px 16px;
-    }
-
-    section {
-        padding: 24px;
-    }
+.welkom-afbeelding img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
+/* Verjaardagsformulier */
 .aanmelden {
-    margin-top: 32px;
+    margin: 32px auto 0;
 }
 
 .formulierveld {
@@ -109,6 +145,7 @@ label {
 input,
 select {
     width: 100%;
+    min-width: 0;
     padding: 12px;
     border: 2px solid #826b45;
     border-radius: 8px;
@@ -132,10 +169,13 @@ fieldset {
 }
 
 legend {
+    max-width: 100%;
     padding: 0 8px;
     font-weight: bold;
+    overflow-wrap: anywhere;
 }
 
+/* Geboortedag en geboortemaand */
 .datumvelden {
     display: flex;
     flex-wrap: wrap;
@@ -144,9 +184,11 @@ legend {
 
 .datumvelden .formulierveld {
     flex: 1 1 140px;
+    min-width: 0;
     margin-bottom: 0;
 }
 
+/* Dierkeuze en bezorgkeuze */
 .dieren {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -157,20 +199,22 @@ legend {
     display: flex;
     align-items: center;
     gap: 12px;
+    min-width: 0;
     margin: 0;
     padding: 16px;
     border: 2px solid #826b45;
     border-radius: 12px;
     background-color: #ffffff;
+    overflow-wrap: anywhere;
     cursor: pointer;
 }
 
 .dieroptie input {
+    flex-shrink: 0;
     width: 20px;
     height: 20px;
     margin: 0;
     padding: 0;
-    flex-shrink: 0;
     accent-color: #286334;
 }
 
@@ -179,100 +223,59 @@ legend {
     background-color: #eaf3dc;
 }
 
-@media (max-width: 400px) {
-    .dieren {
-        grid-template-columns: 1fr;
-    }
+.dieroptie + .dieroptie {
+    margin-top: 12px;
 }
 
-.welkom {
-    max-width: none;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.dieren .dieroptie {
+    margin-top: 0;
 }
 
-.aanmelden {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-@media (max-width: 600px) {
-    .welkom {
-        min-height: auto;
-    }
-}
-
-.welkom {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 32px;
-}
-
-.welkom-afbeelding {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 280px;
-    padding: 24px;
-    border: 2px dashed #826b45;
-    border-radius: 16px;
-    background-color: #eaf3dc;
+/* Onderkant van de pagina */
+footer {
+    padding: 20px;
     text-align: center;
 }
 
+/* Welkomstgedeelte op kleinere schermen */
 @media (max-width: 700px) {
     .welkom {
         grid-template-columns: 1fr;
     }
 }
 
-header {
-    padding: 24px 20px;
-    background-color: #eaf3dc;
-}
-
-header .logo {
-    display: inline-block;
-    margin: 0 0 24px;
-    padding: 12px 36px;
-    border: 3px solid #986235;
-    border-radius: 24px;
-    background-color: #f5d49c;
-    box-shadow: 0 5px 0 #986235;
-    font-size: clamp(28px, 5vw, 44px);
-}
-
-nav {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 16px 24px;
-    border: 2px solid #b78852;
-    border-radius: 16px;
-    background-color: #f5dfb3;
-    box-shadow: 0 4px 8px rgb(66 43 25 / 15%);
-}
-
-nav a {
-    padding: 8px 12px;
-    border-radius: 8px;
-}
-
-nav a:hover {
-    background-color: #ead09f;
-}
-
-nav a[aria-current="page"] {
-    color: #286334;
-    text-decoration: underline;
-    text-underline-offset: 6px;
-}
-
+/* Kleinere afstanden op mobiele schermen */
 @media (max-width: 600px) {
+    header {
+        padding: 20px 16px;
+    }
+
+    header .logo {
+        padding: 12px 24px;
+    }
+
     nav {
         gap: 12px;
         padding: 12px;
+    }
+
+    main {
+        padding: 24px 16px;
+    }
+
+    section {
+        padding: 24px;
+    }
+
+    .welkom {
+        min-height: auto;
+        gap: 24px;
+    }
+}
+
+/* Dierkeuze op zeer smalle schermen */
+@media (max-width: 400px) {
+    .dieren {
+        grid-template-columns: 1fr;
     }
 }
