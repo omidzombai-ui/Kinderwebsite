@@ -184,3 +184,22 @@ legend {
         grid-template-columns: 1fr;
     }
 }
+
+.welkom {
+    max-width: none;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aanmelden {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (max-width: 600px) {
+    .welkom {
+        min-height: auto;
+    }
+}
