@@ -228,3 +228,51 @@ legend {
         grid-template-columns: 1fr;
     }
 }
+
+header {
+    padding: 24px 20px;
+    background-color: #eaf3dc;
+}
+
+header .logo {
+    display: inline-block;
+    margin: 0 0 24px;
+    padding: 12px 36px;
+    border: 3px solid #986235;
+    border-radius: 24px;
+    background-color: #f5d49c;
+    box-shadow: 0 5px 0 #986235;
+    font-size: clamp(28px, 5vw, 44px);
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    border: 2px solid #b78852;
+    border-radius: 16px;
+    background-color: #f5dfb3;
+    box-shadow: 0 4px 8px rgb(66 43 25 / 15%);
+}
+
+nav a {
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background-color: #ead09f;
+}
+
+nav a[aria-current="page"] {
+    color: #286334;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+@media (max-width: 600px) {
+    nav {
+        gap: 12px;
+        padding: 12px;
+    }
+}
