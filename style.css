@@ -294,3 +294,18 @@ footer {
     width: 100%;
     height: auto;
 }
+
+/* Originele ontwerpafbeelding */
+.verjaardag-ontwerp {
+    max-width: none;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: transparent;
+}
+
+.verjaardag-ontwerp img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
