@@ -326,3 +326,24 @@ footer {
     border-radius: 10px;
     background-color: #eaf3dc;
 }
+
+/* Vlaggenlijn */
+.vlaggenlijn {
+    margin: 32px auto 0;
+}
+
+.vlaggenlijn button {
+    max-width: 100%;
+    padding: 14px 24px;
+    border: 2px solid #826b45;
+    border-radius: 10px;
+    background-color: #f5dfb3;
+    color: #422b19;
+    font: inherit;
+    font-weight: bold;
+}
+
+.vlaggenlijn button:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+}
