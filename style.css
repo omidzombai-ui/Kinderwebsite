@@ -252,3 +252,46 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Klikbare navigatie over het menu in de afbeelding */
+.ontwerp-menu {
+    position: absolute;
+    inset: 0;
+    display: block;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.ontwerp-menu a {
+    position: absolute;
+    top: 17%;
+    height: 8%;
+    padding: 0;
+    border-radius: 6px;
+    pointer-events: auto;
+}
+
+.ontwerp-home {
+    left: 9%;
+    width: 15%;
+}
+
+.ontwerp-verjaardag {
+    left: 25%;
+    width: 13%;
+}
+
+.ontwerp-menu a:hover {
+    background-color: rgb(255 255 255 / 20%);
+}
+
+.ontwerp-menu a:focus-visible {
+    outline: 3px solid #286334;
+    outline-offset: -3px;
+}
