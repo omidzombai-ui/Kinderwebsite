@@ -295,3 +295,34 @@ footer {
     outline: 3px solid #286334;
     outline-offset: -3px;
 }
+
+.aanmelden button {
+    padding: 14px 24px;
+    border: 2px solid #286334;
+    border-radius: 10px;
+    background-color: #286334;
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.aanmelden button:hover {
+    background-color: #1d4b27;
+}
+
+.aanmelden button:focus-visible {
+    outline: 3px solid #422b19;
+    outline-offset: 4px;
+}
+
+#formuliermelding {
+    overflow-wrap: anywhere;
+}
+
+#formuliermelding:not(:empty) {
+    padding: 16px;
+    border: 2px solid #286334;
+    border-radius: 10px;
+    background-color: #eaf3dc;
+}
