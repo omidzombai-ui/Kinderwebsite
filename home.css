@@ -1,0 +1,549 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --forest: #315d35;
+    --dark-forest: #23452a;
+    --leaf: #6d9b48;
+    --cream: #fff3d6;
+    --wood: #b77b42;
+    --brown: #59391f;
+    --paper: #fffaf0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Baloo 2', cursive;
+    color: var(--brown);
+    background: #fff8e8;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header {
+    position: relative;
+    z-index: 10;
+    padding: 15px 5% 20px;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at top, #c7e5a2, transparent 70%),
+        #46743e;
+    border-bottom: 7px solid #b4d47e;
+}
+
+.logo {
+    display: inline-block;
+    padding: 3px 35px 8px;
+    margin-bottom: 16px;
+    background: linear-gradient(#ffe6a5, #d9a766);
+    border: 4px solid #a86c37;
+    border-radius: 18px 24px 18px 24px;
+    box-shadow: 0 5px 0 #754822;
+    color: #57351d;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    transform: rotate(-1deg);
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    max-width: 1150px;
+    margin: auto;
+    padding: 10px;
+    background: #fff1c9;
+    border: 3px solid #d8b16c;
+    border-radius: 35px;
+    box-shadow: 0 4px 0 #9d703b;
+}
+
+.navigation a {
+    padding: 7px 14px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background .2s, transform .2s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #d8e7b3;
+    color: var(--dark-forest);
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: #fff1c9;
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Welkomgedeelte */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 600px;
+    padding: 65px 6% 0;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 0%, #d8edaa 0%, transparent 55%),
+        linear-gradient(#83bd65 0%, #c6e69a 45%, #eaf0a8 75%, #7cab4f 100%);
+}
+
+.hero::before {
+    content: "🌳       🌿           🌳       🌲";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    font-size: clamp(3rem, 8vw, 7rem);
+    letter-spacing: 10px;
+    line-height: 1.8;
+    overflow: hidden;
+    opacity: .65;
+    overflow-wrap: anywhere;
+}
+
+.sunshine {
+    position: absolute;
+    top: 35px;
+    right: 12%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ffe88a;
+    box-shadow: 0 0 65px #fff3a4;
+    z-index: -1;
+}
+
+.welcome-sign {
+    position: relative;
+    z-index: 2;
+    max-width: 490px;
+    padding: 28px 30px 32px;
+    background: linear-gradient(135deg, #fff1c8, #f7d99c);
+    border: 5px solid #c18b4e;
+    border-radius: 12px 24px 14px 26px;
+    box-shadow: 0 8px 0 #996737, 0 12px 30px #36542b35;
+    transform: rotate(-1deg);
+}
+
+.leaf {
+    position: absolute;
+    right: 16px;
+    top: 7px;
+    font-size: 2rem;
+}
+
+.eyebrow {
+    color: #628541;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.welcome-sign h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.08;
+    margin: 8px 0 15px;
+}
+
+.welcome-text {
+    font-size: 1.12rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.wood-button {
+    display: inline-block;
+    padding: 12px 23px;
+    border: 3px solid #98602e;
+    border-radius: 10px 18px;
+    background: linear-gradient(#f4cf85, #d49a54);
+    box-shadow: 0 4px 0 #8a592d;
+    color: #563519;
+    font-weight: 800;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.wood-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0 #8a592d;
+}
+
+/* De diertjes */
+
+.forest-scene {
+    position: absolute;
+    right: 5%;
+    bottom: 45px;
+    width: 52%;
+    height: 350px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+}
+
+.animal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+.animal span {
+    font-size: clamp(5rem, 11vw, 9rem);
+    filter: drop-shadow(0 7px 4px #30432235);
+}
+
+.animal small {
+    margin-top: 5px;
+    padding: 4px 12px;
+    background: #fff1c9;
+    border: 2px solid #c18b4e;
+    border-radius: 20px;
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.animal-left {
+    animation-delay: .3s;
+}
+
+.animal-center {
+    z-index: 2;
+    animation-delay: .8s;
+}
+
+.animal-right {
+    animation-delay: 1.2s;
+}
+
+.bird,
+.butterfly,
+.mushroom,
+.flower {
+    position: absolute;
+    font-size: 2.5rem;
+    animation: float 4s ease-in-out infinite;
+}
+
+.bird {
+    top: 0;
+    right: 10%;
+}
+
+.butterfly {
+    top: 40%;
+    left: 8%;
+    animation-delay: .8s;
+}
+
+.mushroom {
+    bottom: 15px;
+    left: 0;
+}
+
+.flower-one {
+    bottom: 8px;
+    right: 12%;
+}
+
+.flower-two {
+    bottom: 0;
+    left: 28%;
+    animation-delay: 1s;
+}
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background: linear-gradient(#86b74b, #477b36);
+    border-top: 5px solid #b6d66b;
+    z-index: -1;
+}
+
+/* Ontdekkaarten */
+
+.explore {
+    padding: 65px 6%;
+    background:
+        radial-gradient(ellipse at center, #fffdf3, #fff3d8);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading > span {
+    font-size: 2rem;
+}
+
+.section-heading h2 {
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    color: var(--forest);
+    margin: 8px 0;
+}
+
+.section-heading p {
+    font-size: 1.1rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+    border: 3px solid #d8c28d;
+    border-radius: 18px 26px 18px 26px;
+    box-shadow: 0 6px 0 #b9a375;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px) rotate(-1deg);
+    box-shadow: 0 12px 0 #b9a375;
+}
+
+.pink {
+    background: #ffe5e1;
+}
+
+.green {
+    background: #e1efce;
+}
+
+.yellow {
+    background: #fff0bf;
+}
+
+.blue {
+    background: #e0edfa;
+}
+
+.feature-icon {
+    font-size: 3.2rem;
+    margin-bottom: 8px;
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    color: var(--forest);
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.card-link {
+    margin-top: auto;
+    color: #426c32;
+    font-weight: 800;
+}
+
+/* Verjaardag */
+
+.birthday-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 35px 6%;
+    margin: 0 6% 55px;
+    background: #e5efc9;
+    border: 4px solid #a9c47c;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.birthday-animal {
+    font-size: 3.5rem;
+}
+
+.birthday-banner h2 {
+    color: var(--forest);
+    font-size: 1.7rem;
+}
+
+.birthday-banner p {
+    margin-top: 5px;
+}
+
+/* Footer */
+
+.site-footer {
+    padding: 30px 15px;
+    background: #315d35;
+    color: #fff3d6;
+    text-align: center;
+}
+
+.site-footer a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: underline;
+}
+
+.copyright {
+    opacity: .8;
+    font-size: .9rem;
+}
+
+/* Beweging */
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-13px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-14px) rotate(8deg); }
+}
+
+/* Tablet */
+
+@media (max-width: 950px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding-bottom: 370px;
+    }
+
+    .forest-scene {
+        width: 90%;
+        right: 5%;
+        height: 320px;
+    }
+
+    .welcome-sign {
+        max-width: 600px;
+    }
+}
+
+/* Mobiel */
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 14px 12px;
+    }
+
+    .logo {
+        font-size: 2rem;
+        padding: 5px 15px;
+        margin-bottom: 12px;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        margin-top: 12px;
+        border-radius: 18px;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .navigation a {
+        width: 100%;
+    }
+
+    .hero {
+        padding: 35px 18px 310px;
+    }
+
+    .welcome-sign {
+        padding: 22px 18px;
+    }
+
+    .welcome-sign h1 {
+        font-size: 2.2rem;
+    }
+
+    .welcome-text {
+        font-size: 1rem;
+    }
+
+    .forest-scene {
+        bottom: 40px;
+        width: 100%;
+        right: 0;
+        height: 245px;
+        gap: 0;
+    }
+
+    .animal span {
+        font-size: clamp(3.5rem, 17vw, 6rem);
+    }
+
+    .animal small {
+        font-size: .7rem;
+        padding: 3px 6px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .explore {
+        padding: 45px 20px;
+    }
+
+    .birthday-banner {
+        margin: 0 15px 35px;
+        padding: 25px 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
