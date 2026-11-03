@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download en print leuke Wurzels-kleurplaten.">
+  <title>De Wurzels - Kleurplaten</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="pagina" aria-label="De Wurzels kleurplaten">
+    <img class="ontwerp" src="assets/achtergrond-voorbeeld.png"
+         alt="De originele voorbeeldpagina van De Wurzels met bosachtergrond en vier kleurplaten">
+
+    <!-- Klikbare vlakken liggen precies over de vier kleurplaten in het voorbeeld. -->
+    <button class="kaart kaart-1" data-index="0" aria-label="Open kleurplaat De Wurzels samen"></button>
+    <button class="kaart kaart-2" data-index="1" aria-label="Open kleurplaat In de speelboom"></button>
+    <button class="kaart kaart-3" data-index="2" aria-label="Open kleurplaat In de bloementuin"></button>
+    <button class="kaart kaart-4" data-index="3" aria-label="Open kleurplaat Lente avontuur"></button>
+    <a class="terug-link" href="#" aria-label="Terug naar de homepage"></a>
+  </main>
+
+  <dialog id="kleurplaatDialoog" class="dialoog">
+    <button class="sluiten" type="button" aria-label="Sluiten">×</button>
+    <h1 id="kleurplaatTitel">Kleurplaat</h1>
+    <img id="kleurplaatAfbeelding" src="" alt="Geselecteerde kleurplaat">
+    <p>Kies hieronder of je de kleurplaat wilt downloaden of afdrukken.</p>
+    <div class="acties">
+      <a id="downloadKnop" class="actie" download>Download kleurplaat</a>
+      <button id="printKnop" class="actie" type="button">Afdrukken</button>
+    </div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
