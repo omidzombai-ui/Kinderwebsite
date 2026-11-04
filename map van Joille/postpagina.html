@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postpagina</title>
+    <link rel="stylesheet" href="postpagina.css">
+<!-- HTML-bestand maakt gebruik van de opmaak uit postpagina.css -->
+</head>
+    <body>
+
+    <header class="site-header">
+        <div class="logo">de Wurzels</div>
+
+        <nav class="navigation">
+            <a href="../index.html">Home</a>
+            <a href="#">Verjaardag</a>
+            <a href="#">Kleurplaten</a>
+            <a href="#" class="active">Post</a>
+            <a href="#">Puzzels</a>
+            <a href="#">Tijdschrift</a>
+        </nav>
+    </header>
+
+    <main class="postpagina">
+
+        <section class="post-inhoud">
+
+            <div class="brief-kaart">
+                <h1>Schrijf ons een bericht!</h1>
+
+                <p>
+                    Heb je een vraag, een leuke boodschap
+                    of wil je iets delen met de Wurzels?
+                    Dan kun je ons een briefje sturen!
+                </p>
+
+                <p>
+                    We vinden het superleuk om iets
+                    van je te horen!
+                </p>
+
+                <form id="post-formulier">
+
+                    <label for="naam">Hoe heet je?</label>
+                    <input
+                        type="text"
+                        id="naam"
+                        placeholder="Jouw naam"
+                        required
+                    >
+
+                    <label for="bericht">Jouw bericht</label>
+                    <textarea
+                        id="bericht"
+                        placeholder="Schrijf hier je brief..."
+                        rows="6"
+                        required
+                    ></textarea>
+
+                    <button type="submit" class="wood-button">
+                        Verstuur je brief
+                    </button>
+
+                </form>
+            </div>
+
+            <div class="brievenbus">
+                <h2>Post</h2>
+                <p>Stuur je brief naar de Wurzels</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Met liefde gemaakt door de Wurzels</p>
+        <p class="copyright">© 2026 de Wurzels</p>
+    </footer>
+
+    </body>
+</html>
+
