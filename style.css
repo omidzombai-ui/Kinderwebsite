@@ -277,14 +277,22 @@ footer {
     pointer-events: auto;
 }
 
+/* Home */
 .ontwerp-home {
     left: 9%;
     width: 15%;
 }
 
+/* Verjaardag */
 .ontwerp-verjaardag {
     left: 25%;
     width: 13%;
+}
+
+/* Kleurplaten */
+.ontwerp-kleurplaten {
+    left: 40%;
+    width: 15%;
 }
 
 .ontwerp-menu a:hover {
@@ -296,6 +304,7 @@ footer {
     outline-offset: -3px;
 }
 
+/* Testknop van het formulier */
 .aanmelden button {
     padding: 14px 24px;
     border: 2px solid #286334;
@@ -316,6 +325,7 @@ footer {
     outline-offset: 4px;
 }
 
+/* Resultaat van de formuliertest */
 #formuliermelding {
     overflow-wrap: anywhere;
 }
