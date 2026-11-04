@@ -3,278 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verjaardag | De Wurzels</title>
+    <title>Verjaardag | de Wurzels</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <header class="site-header">
+        <a href="home.html" class="logo">🌿 de Wurzels 🌿</a>
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Menu openen"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >☰</button>
+
+        <nav class="navigation" id="navigation" aria-label="Hoofdnavigatie">
+            <a href="home.html">🏡 Home</a>
+
+            <a href="verjaardag.html" class="active" aria-current="page">
+                🎂 Verjaardag
+            </a>
+
+            <a href="kleurplaten.html">🎨 Kleurplaten</a>
+            <a href="berichten.html">✉️ Post</a>
+            <a href="puzzels.html">🧩 Puzzels</a>
+            <a href="tijdschriften.html">📖 Tijdschrift</a>
+        </nav>
+    </header>
+
     <main>
+        <section class="hero" aria-labelledby="verjaardagstitel">
+            <div class="sunshine" aria-hidden="true"></div>
+
+            <div class="welcome-sign">
+                <span class="leaf" aria-hidden="true">🍃</span>
+                <p class="eyebrow">Feest in het Wurzelsbos</p>
+
+                <h1 id="verjaardagstitel">Hiep hiep hoera!</h1>
+
+                <p class="welcome-text">
+                    De Wurzels vieren jouw verjaardag!
+                    Kies jouw favoriete diertje voor een persoonlijke
+                    verjaardagsboodschap.
+                </p>
+
+                <a class="wood-button" href="#aanmelden">
+                    Vier het met ons! 🎈
+                </a>
+            </div>
+
+            <div class="forest-scene">
+                <div class="bird" aria-hidden="true">🎈</div>
+                <div class="butterfly" aria-hidden="true">🦋</div>
+
+                <div class="animal animal-left">
+                    <span aria-hidden="true">🐿️</span>
+                    <small>Sam de eekhoorn</small>
+                </div>
+
+                <div class="animal animal-center">
+                    <span aria-hidden="true">🐻</span>
+                    <small>Bram de beer</small>
+                </div>
+
+                <div class="animal animal-right">
+                    <span aria-hidden="true">🐰</span>
+                    <small>Luna het konijntje</small>
+                </div>
+
+                <div class="mushroom" aria-hidden="true">🎂</div>
+                <div class="flower flower-one" aria-hidden="true">🌼</div>
+                <div class="flower flower-two" aria-hidden="true">🎁</div>
+            </div>
+
+            <div class="grass" aria-hidden="true"></div>
+        </section>
+
         <section
-            class="verjaardag-ontwerp"
-            aria-label="Welkom op de verjaardagspagina"
+            class="aanmeldgedeelte"
+            id="aanmelden"
+            aria-labelledby="aanmeldtitel"
         >
-            <img
-                src="images/verjaardag-ontwerp.png"
-                alt="Hiep hiep hoera! De Wurzels vieren jouw verjaardag.
-                     Vier Wurzels vieren feest in het bos met taart,
-                     cadeautjes en ballonnen."
-            >
+            <div class="section-heading">
+                <span aria-hidden="true">🌼 🎂 🌼</span>
+                <h2 id="aanmeldtitel">Vier je verjaardag met ons!</h2>
+                <p>Vraag je ouder of verzorger om het formulier in te vullen.</p>
+            </div>
 
-            <nav class="ontwerp-menu" aria-label="Hoofdnavigatie">
-                <a
-                    class="ontwerp-home"
-                    href="home.html"
-                    aria-label="Home"
-                ></a>
+            <div class="formulierkaart">
+                <p class="testbericht" id="testuitleg">
+                    Dit is een testformulier. Gebruik fictieve gegevens.
+                    Er wordt niets opgeslagen, geen mail verstuurd
+                    en geen kaart aangevraagd.
+                </p>
 
-                <a
-                    class="ontwerp-verjaardag"
-                    href="verjaardag.html"
-                    aria-label="Verjaardag"
-                    aria-current="page"
-                ></a>
-            </nav>
-
-            <a
-                class="terug-home"
-                href="home.html"
-                aria-label="Terug naar de homepage"
-            ></a>
-        </section>
-
-        <section class="aanmelden" aria-labelledby="aanmeldtitel">
-            <h2 id="aanmeldtitel">Vier je verjaardag met ons!</h2>
-
-            <p>
-                Vraag je ouder of verzorger om je aan te melden
-                voor een verjaardagsboodschap van jouw favoriete Wurzel.
-            </p>
-
-            <p>
-                Dit formulier is in ontwikkeling.
-                Aanmelden is nog niet mogelijk.
-                Gebruik fictieve gegevens om het formulier te testen.
-            </p>
-
-            <form id="verjaardagsformulier">
-                <div class="formulierveld">
-                    <label for="voornaam">Voornaam van het kind</label>
-                    <input
-                        type="text"
-                        id="voornaam"
-                        name="voornaam"
-                        maxlength="50"
-                        required
-                    >
-                </div>
-
-                <fieldset>
-                    <legend>Wanneer is het kind jarig?</legend>
-
-                    <div class="datumvelden">
-                        <div class="formulierveld">
-                            <label for="geboortedag">Dag</label>
-                            <input
-                                type="number"
-                                id="geboortedag"
-                                name="geboortedag"
-                                min="1"
-                                max="31"
-                                required
-                            >
-                        </div>
-
-                        <div class="formulierveld">
-                            <label for="geboortemaand">Maand</label>
-                            <select
-                                id="geboortemaand"
-                                name="geboortemaand"
-                                required
-                            >
-                                <option value="">Kies een maand</option>
-                                <option value="1">Januari</option>
-                                <option value="2">Februari</option>
-                                <option value="3">Maart</option>
-                                <option value="4">April</option>
-                                <option value="5">Mei</option>
-                                <option value="6">Juni</option>
-                                <option value="7">Juli</option>
-                                <option value="8">Augustus</option>
-                                <option value="9">September</option>
-                                <option value="10">Oktober</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
-                            </select>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <div class="formulierveld">
-                    <label for="email">
-                        E-mailadres van ouder of verzorger
-                    </label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        autocomplete="email"
-                        required
-                    >
-                </div>
-
-                <fieldset class="dierkeuze">
-                    <legend>
-                        Van welke Wurzel wil je een verjaardagsboodschap?
-                    </legend>
-
-                    <p>
-                        Kies één favoriet diertje.
-                        De namen zijn voorlopig.
+                <noscript>
+                    <p class="testbericht">
+                        Zet JavaScript aan om het formulier te testen.
                     </p>
+                </noscript>
 
-                    <div class="dieren">
-                        <label class="dieroptie">
+                <form id="verjaardagsformulier" aria-describedby="testuitleg">
+                    <div class="formulierveld">
+                        <label for="voornaam">Voornaam van het kind</label>
+                        <input
+                            type="text"
+                            id="voornaam"
+                            name="voornaam"
+                            maxlength="50"
+                            required
+                        >
+                    </div>
+
+                    <fieldset>
+                        <legend>Wat is de geboortedatum van het kind?</legend>
+
+                        <div class="datumvelden geboortedatum">
+                            <div class="formulierveld">
+                                <label for="geboortedag">Dag</label>
+                                <input
+                                    type="number"
+                                    id="geboortedag"
+                                    name="geboortedag"
+                                    min="1"
+                                    max="31"
+                                    step="1"
+                                    required
+                                >
+                            </div>
+
+                            <div class="formulierveld">
+                                <label for="geboortemaand">Maand</label>
+                                <select
+                                    id="geboortemaand"
+                                    name="geboortemaand"
+                                    required
+                                >
+                                    <option value="">Kies een maand</option>
+                                    <option value="1">Januari</option>
+                                    <option value="2">Februari</option>
+                                    <option value="3">Maart</option>
+                                    <option value="4">April</option>
+                                    <option value="5">Mei</option>
+                                    <option value="6">Juni</option>
+                                    <option value="7">Juli</option>
+                                    <option value="8">Augustus</option>
+                                    <option value="9">September</option>
+                                    <option value="10">Oktober</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                            </div>
+
+                            <div class="formulierveld">
+                                <label for="geboortejaar">Jaar</label>
+                                <input
+                                    type="number"
+                                    id="geboortejaar"
+                                    name="geboortejaar"
+                                    min="1900"
+                                    step="1"
+                                    placeholder="Bijv. 2018"
+                                    required
+                                >
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="formulierveld">
+                        <label for="email">
+                            E-mailadres van ouder of verzorger
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <fieldset>
+                        <legend>Kies één favoriet diertje</legend>
+
+                        <div class="dieren">
+                            <label class="keuze dieroptie">
+                                <input
+                                    type="radio"
+                                    name="diertje"
+                                    value="sam"
+                                    required
+                                >
+                                <span>
+                                    <span class="dier-emoji" aria-hidden="true">
+                                        🐿️
+                                    </span>
+                                    Sam de eekhoorn
+                                </span>
+                            </label>
+
+                            <label class="keuze dieroptie">
+                                <input type="radio" name="diertje" value="bram">
+                                <span>
+                                    <span class="dier-emoji" aria-hidden="true">
+                                        🐻
+                                    </span>
+                                    Bram de beer
+                                </span>
+                            </label>
+
+                            <label class="keuze dieroptie">
+                                <input type="radio" name="diertje" value="luna">
+                                <span>
+                                    <span class="dier-emoji" aria-hidden="true">
+                                        🐰
+                                    </span>
+                                    Luna het konijntje
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Hoe wil je de boodschap ontvangen?</legend>
+
+                        <div class="bezorgkeuzes">
+                            <label class="keuze">
+                                <input
+                                    type="radio"
+                                    name="bezorging"
+                                    value="email"
+                                    checked
+                                >
+                                <span>💌 Een verjaardagsmail</span>
+                            </label>
+
+                            <label class="keuze">
+                                <input
+                                    type="radio"
+                                    name="bezorging"
+                                    value="kaart"
+                                >
+                                <span>📬 Een echte verjaardagskaart</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset id="adresvelden" hidden disabled>
+                        <legend>Waar mag de kaart naartoe?</legend>
+
+                        <div class="formulierveld">
+                            <label for="ontvanger">Naam van de ontvanger</label>
                             <input
-                                type="radio"
-                                name="diertje"
-                                value="wurzel-1"
+                                type="text"
+                                id="ontvanger"
+                                name="ontvanger"
                                 required
                             >
-                            <span>Wurzel 1</span>
-                        </label>
+                        </div>
 
-                        <label class="dieroptie">
+                        <div class="formulierveld">
+                            <label for="straat">Straat en huisnummer</label>
                             <input
-                                type="radio"
-                                name="diertje"
-                                value="wurzel-2"
+                                type="text"
+                                id="straat"
+                                name="straat"
+                                autocomplete="address-line1"
+                                required
                             >
-                            <span>Wurzel 2</span>
-                        </label>
+                        </div>
 
-                        <label class="dieroptie">
-                            <input
-                                type="radio"
-                                name="diertje"
-                                value="wurzel-3"
-                            >
-                            <span>Wurzel 3</span>
-                        </label>
+                        <div class="datumvelden">
+                            <div class="formulierveld">
+                                <label for="postcode">Postcode</label>
+                                <input
+                                    type="text"
+                                    id="postcode"
+                                    name="postcode"
+                                    autocomplete="postal-code"
+                                    required
+                                >
+                            </div>
 
-                        <label class="dieroptie">
-                            <input
-                                type="radio"
-                                name="diertje"
-                                value="wurzel-4"
-                            >
-                            <span>Wurzel 4</span>
-                        </label>
-                    </div>
-                </fieldset>
+                            <div class="formulierveld">
+                                <label for="woonplaats">Woonplaats</label>
+                                <input
+                                    type="text"
+                                    id="woonplaats"
+                                    name="woonplaats"
+                                    autocomplete="address-level2"
+                                    required
+                                >
+                            </div>
+                        </div>
+                    </fieldset>
 
-                <fieldset>
-                    <legend>
-                        Hoe wil je de verjaardagsboodschap ontvangen?
-                    </legend>
+                    <button
+                        class="wood-button"
+                        id="testknop"
+                        type="submit"
+                        disabled
+                    >
+                        Aanmelding testen 🎉
+                    </button>
 
-                    <label class="dieroptie">
-                        <input
-                            type="radio"
-                            name="bezorging"
-                            value="email"
-                            checked
-                        >
-                        <span>Een verjaardagsmail</span>
-                    </label>
-
-                    <label class="dieroptie">
-                        <input
-                            type="radio"
-                            name="bezorging"
-                            value="kaart"
-                        >
-                        <span>Een echte verjaardagskaart</span>
-                    </label>
-                </fieldset>
-
-                <fieldset id="adresvelden" hidden disabled>
-                    <legend>Waar mag de kaart naartoe?</legend>
-
-                    <div class="formulierveld">
-                        <label for="ontvanger">
-                            Naam van de ontvanger
-                        </label>
-                        <input
-                            type="text"
-                            id="ontvanger"
-                            name="ontvanger"
-                            required
-                        >
-                    </div>
-
-                    <div class="formulierveld">
-                        <label for="straat">Straat en huisnummer</label>
-                        <input
-                            type="text"
-                            id="straat"
-                            name="straat"
-                            autocomplete="address-line1"
-                            required
-                        >
-                    </div>
-
-                    <div class="formulierveld">
-                        <label for="postcode">Postcode</label>
-                        <input
-                            type="text"
-                            id="postcode"
-                            name="postcode"
-                            autocomplete="postal-code"
-                            required
-                        >
-                    </div>
-
-                    <div class="formulierveld">
-                        <label for="woonplaats">Woonplaats</label>
-                        <input
-                            type="text"
-                            id="woonplaats"
-                            name="woonplaats"
-                            autocomplete="address-level2"
-                            required
-                        >
-                    </div>
-                </fieldset>
-
-                <button type="submit">Aanmelding testen</button>
-
-                <p id="formuliermelding" role="status"></p>
-            </form>
+                    <p id="formuliermelding" role="status"></p>
+                </form>
+            </div>
         </section>
 
-        <section class="vlaggenlijn" aria-labelledby="vlaggenlijntitel">
-            <h2 id="vlaggenlijntitel">
-                Maak er een Wurzels-feestje van!
-            </h2>
+        <section class="birthday-banner" aria-labelledby="vlaggenlijntitel">
+            <div class="birthday-animal" aria-hidden="true">🎊 🎈</div>
 
-            <p>
-                Versier je verjaardag met een vlaggenlijn van De Wurzels.
-                Zo vieren jouw favoriete diertjes het feestje met je mee.
-            </p>
+            <div>
+                <h2 id="vlaggenlijntitel">
+                    Een Wurzels-vlaggenlijn voor jouw feestje
+                </h2>
 
-            <p>
-                De prijs en bestelmogelijkheid worden binnenkort toegevoegd.
-            </p>
+                <p>
+                    Versier je verjaardag met jouw favoriete diertjes.
+                    De prijs en bestelmogelijkheid volgen nog.
+                </p>
+            </div>
 
-            <button type="button" disabled>
+            <button class="wood-button" type="button" disabled>
                 Bestellen binnenkort beschikbaar
             </button>
         </section>
     </main>
 
-    <footer>
-        <p>De Wurzels</p>
+    <footer class="site-footer">
+        <p>🌿 Met liefde gemaakt door de Wurzels 🌿</p>
+        <a href="contact.html">Contact</a>
+        <p class="copyright">© 2026 de Wurzels</p>
     </footer>
 </body>
 </html>
