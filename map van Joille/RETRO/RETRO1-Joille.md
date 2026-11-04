@@ -11,3 +11,29 @@ wurzel kinderwebsite
 - Samenwerken met mijn groepsgenoten en mijn onderdeel combineren met de rest van de website.
 - Rekening houden met privacy en veiligheid bij het verwerken van berichten.
 
+
+## Evaluatie
+- Is het gelukt om het product te maken zoals je bedoelde?
+    Het is gedeeltelijk gelukt. Ik heb een postpagina gemaakt waar bezoekers berichten kunnen versturen. Alleen weet ik nog niet waar de berichten terechtkomen en kan ik ze zelf niet bekijken. Ook is mijn pagina nog niet volledig gekoppeld aan de andere pagina's van mijn groepje.
+- Is het gelukt om het gewenste product te maken in de gestelde tijd?
+    Niet helemaal. Ik heb de postpagina gemaakt, maar sommige onderdelen zijn nog niet volledig af.
+- Welke redenen kun je bedenken?
+    Het maken van de pagina kostte meer tijd dan verwacht. Ook moet ik nog uitzoeken hoe ik de verstuurde berichten kan bekijken en hoe mijn pagina goed gekoppeld kan worden aan de rest van de website.
+- Is het gelukt om de leerdoelen voor dit project waar te maken?
+    Ik heb aan mijn leerdoelen gewerkt, maar nog niet alles volledig afgerond.
+- Welke redenen kun je aangeven?
+    Ik heb mijn best gedaan om een kindvriendelijke pagina te maken en het samenwerken aan een gezamenlijke website.
+- Wat vond je makkelijk aan dit project?
+
+- Wat vond je moeilijk aan dit project?
+    
+- Welke inzichten wil je voor een volgend project behouden?
+- Welke inzichten ga je bij een volgend project aanpassen?
+- Heb je nog nieuwe inzichten gekregen over de randvoorwaarden van je project?
+- Geef aan of je tevreden of ontevreden bent met je werkwijze in dit project en de kwaliteit van je eindproduct.
+
+
+
+
+
+28-10-26 tot 04-11-26
