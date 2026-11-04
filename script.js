@@ -1,8 +1,15 @@
-/* Mobiel menu, zoals op de homepage */
+/* Mobiel menu */
 const menuToggle = document.getElementById("menuToggle");
 const navigation = document.getElementById("navigation");
 
 if (menuToggle && navigation) {
+    function sluitMenu() {
+        navigation.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Menu openen");
+        menuToggle.textContent = "☰";
+    }
+
     menuToggle.addEventListener("click", function () {
         const isOpen = navigation.classList.toggle("open");
 
@@ -17,83 +24,130 @@ if (menuToggle && navigation) {
 
     navigation.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
-            navigation.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Menu openen");
-            menuToggle.textContent = "☰";
+            sluitMenu();
             menuToggle.focus();
         }
     });
 }
 
-/* Adresvelden bij een echte kaart */
-const bezorgopties = document.querySelectorAll(
-    'input[name="bezorging"]'
-);
-
-const adresvelden = document.getElementById("adresvelden");
-
-function werkAdresveldenBij() {
-    const gekozenOptie = document.querySelector(
-        'input[name="bezorging"]:checked'
-    );
-
-    if (!gekozenOptie || !adresvelden) {
-        return;
-    }
-
-    const kiestKaart = gekozenOptie.value === "kaart";
-
-    adresvelden.hidden = !kiestKaart;
-    adresvelden.disabled = !kiestKaart;
-}
-
-bezorgopties.forEach(function (optie) {
-    optie.addEventListener("change", werkAdresveldenBij);
-});
-
-werkAdresveldenBij();
-
-/* Formuliercontrole */
+/* Formulieronderdelen */
 const formulier = document.getElementById("verjaardagsformulier");
+const adresvelden = document.getElementById("adresvelden");
+const voornaamveld = document.getElementById("voornaam");
 const dagveld = document.getElementById("geboortedag");
 const maandveld = document.getElementById("geboortemaand");
+const jaarveld = document.getElementById("geboortejaar");
 const melding = document.getElementById("formuliermelding");
+const testknop = document.getElementById("testknop");
 
-if (formulier && dagveld && maandveld && melding) {
+if (
+    formulier &&
+    adresvelden &&
+    voornaamveld &&
+    dagveld &&
+    maandveld &&
+    jaarveld &&
+    melding &&
+    testknop
+) {
+    /* Adresvelden alleen bij een echte kaart */
+    function werkAdresveldenBij() {
+        const gekozenOptie = formulier.querySelector(
+            'input[name="bezorging"]:checked'
+        );
+
+        const kiestKaart = gekozenOptie?.value === "kaart";
+
+        adresvelden.hidden = !kiestKaart;
+        adresvelden.disabled = !kiestKaart;
+    }
+
+    const bezorgopties = formulier.querySelectorAll(
+        'input[name="bezorging"]'
+    );
+
+    bezorgopties.forEach(function (optie) {
+        optie.addEventListener("change", werkAdresveldenBij);
+    });
+
+    /* Geboortedatum controleren */
     function controleerDatum() {
         dagveld.setCustomValidity("");
+        jaarveld.setCustomValidity("");
 
-        const dag = Number(dagveld.value);
-        const maand = Number(maandveld.value);
+        const vandaag = new Date();
+        vandaag.setHours(0, 0, 0, 0);
 
-        if (!dagveld.value || !maandveld.value) {
+        jaarveld.max = String(vandaag.getFullYear());
+
+        if (
+            !dagveld.value ||
+            !maandveld.value ||
+            !jaarveld.value
+        ) {
             return;
         }
 
-        // 29 februari mag als jaarlijkse verjaardag gekozen worden.
-        const dagenPerMaand = [
-            31, 29, 31, 30, 31, 30,
-            31, 31, 30, 31, 30, 31
-        ];
-
-        const maximum = dagenPerMaand[maand - 1];
+        const dag = Number(dagveld.value);
+        const maand = Number(maandveld.value);
+        const jaar = Number(jaarveld.value);
 
         if (
-            !Number.isInteger(dag) ||
-            !maximum ||
-            dag < 1 ||
-            dag > maximum
+            !Number.isInteger(jaar) ||
+            jaar < 1900 ||
+            jaar > vandaag.getFullYear()
         ) {
+            jaarveld.setCustomValidity(
+                "Vul een geboortejaar in tussen 1900 en " +
+                vandaag.getFullYear() + "."
+            );
+            return;
+        }
+
+        const geboortedatum = new Date(jaar, maand - 1, dag);
+
+        // JavaScript schuift ongeldige datums door.
+        // Daarom vergelijken we de datum met de ingevulde waarden.
+        const datumKlopt =
+            Number.isInteger(dag) &&
+            Number.isInteger(maand) &&
+            geboortedatum.getFullYear() === jaar &&
+            geboortedatum.getMonth() === maand - 1 &&
+            geboortedatum.getDate() === dag;
+
+        if (!datumKlopt) {
             dagveld.setCustomValidity(
-                "Kies een geldige dag voor de geselecteerde maand."
+                "Deze datum bestaat niet. Controleer dag, maand en jaar."
+            );
+            return;
+        }
+
+        if (geboortedatum > vandaag) {
+            jaarveld.setCustomValidity(
+                "De geboortedatum mag niet in de toekomst liggen."
+            );
+        }
+    }
+
+    function controleerVoornaam() {
+        voornaamveld.setCustomValidity("");
+
+        if (
+            voornaamveld.value.length > 0 &&
+            !voornaamveld.value.trim()
+        ) {
+            voornaamveld.setCustomValidity(
+                "Vul een voornaam in, niet alleen spaties."
             );
         }
     }
 
     dagveld.addEventListener("input", controleerDatum);
     maandveld.addEventListener("change", controleerDatum);
+    jaarveld.addEventListener("input", controleerDatum);
+    voornaamveld.addEventListener("input", controleerVoornaam);
 
+    /* Oude bevestiging wissen na een wijziging */
     function wisMelding() {
         melding.textContent = "";
     }
@@ -101,35 +155,27 @@ if (formulier && dagveld && maandveld && melding) {
     formulier.addEventListener("input", wisMelding);
     formulier.addEventListener("change", wisMelding);
 
+    /* Alleen testen: geen gegevens versturen */
     formulier.addEventListener("submit", function (event) {
         event.preventDefault();
 
         controleerDatum();
+        controleerVoornaam();
 
         if (!formulier.reportValidity()) {
             return;
         }
 
-        const voornaamveld = document.getElementById("voornaam");
-
-        if (!voornaamveld.value.trim()) {
-            voornaamveld.setCustomValidity("Vul een voornaam in.");
-            voornaamveld.reportValidity();
-            return;
-        }
-
         melding.textContent =
             "De test is gelukt! De verplichte velden zijn ingevuld " +
-            "en de datum is geldig. Er is niets opgeslagen, " +
+            "en de geboortedatum is geldig. Er is niets opgeslagen, " +
             "geen mail verstuurd en geen kaart aangevraagd.";
     });
 
-    document.getElementById("voornaam").addEventListener(
-        "input",
-        function (event) {
-            event.target.setCustomValidity("");
-        }
-    );
-
+    werkAdresveldenBij();
     controleerDatum();
+    controleerVoornaam();
+
+    // De knop werkt zodra de formuliercode is geladen.
+    testknop.disabled = false;
 }

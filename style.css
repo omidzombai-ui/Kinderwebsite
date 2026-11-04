@@ -1,7 +1,7 @@
-/* Dezelfde basisvormgeving als de homepage */
+/* Gezamenlijke vormgeving van de homepage */
 @import url("home.css");
 
-/* Duidelijke toetsenbordfocus */
+/* Toetsenbordfocus */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -28,6 +28,7 @@ button {
 .aanmeldgedeelte {
     padding: 65px 6%;
     background: radial-gradient(ellipse at center, #fffdf3, #fff3d8);
+    scroll-margin-top: 24px;
 }
 
 .formulierkaart {
@@ -87,6 +88,7 @@ legend {
     overflow-wrap: anywhere;
 }
 
+/* Twee kolommen voor postcode en woonplaats */
 .datumvelden {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -95,6 +97,11 @@ legend {
 
 .datumvelden .formulierveld {
     margin-bottom: 0;
+}
+
+/* Drie kolommen voor dag, maand en jaar */
+.geboortedatum {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 /* Favoriet diertje */
@@ -123,6 +130,10 @@ legend {
     width: 20px;
     height: 20px;
     accent-color: var(--forest);
+}
+
+.keuze > span {
+    min-width: 0;
 }
 
 .keuze:has(input:checked) {
@@ -159,6 +170,7 @@ legend {
     background: #e5efc9;
 }
 
+/* Knoppen */
 .wood-button {
     max-width: 100%;
     text-align: center;
@@ -189,7 +201,8 @@ legend {
     }
 
     .dieren,
-    .datumvelden {
+    .datumvelden,
+    .geboortedatum {
         grid-template-columns: 1fr;
     }
 

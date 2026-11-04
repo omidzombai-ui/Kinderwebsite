@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verjaardag | de Wurzels</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -22,9 +23,11 @@
 
         <nav class="navigation" id="navigation" aria-label="Hoofdnavigatie">
             <a href="home.html">🏡 Home</a>
+
             <a href="verjaardag.html" class="active" aria-current="page">
                 🎂 Verjaardag
             </a>
+
             <a href="kleurplaten.html">🎨 Kleurplaten</a>
             <a href="berichten.html">✉️ Post</a>
             <a href="puzzels.html">🧩 Puzzels</a>
@@ -53,7 +56,7 @@
                 </a>
             </div>
 
-            <div class="forest-scene" aria-label="Sam, Bram en Luna vieren feest">
+            <div class="forest-scene">
                 <div class="bird" aria-hidden="true">🎈</div>
                 <div class="butterfly" aria-hidden="true">🦋</div>
 
@@ -80,7 +83,11 @@
             <div class="grass" aria-hidden="true"></div>
         </section>
 
-        <section class="aanmeldgedeelte" id="aanmelden" aria-labelledby="aanmeldtitel">
+        <section
+            class="aanmeldgedeelte"
+            id="aanmelden"
+            aria-labelledby="aanmeldtitel"
+        >
             <div class="section-heading">
                 <span aria-hidden="true">🌼 🎂 🌼</span>
                 <h2 id="aanmeldtitel">Vier je verjaardag met ons!</h2>
@@ -93,6 +100,12 @@
                     Er wordt niets opgeslagen, geen mail verstuurd
                     en geen kaart aangevraagd.
                 </p>
+
+                <noscript>
+                    <p class="testbericht">
+                        Zet JavaScript aan om het formulier te testen.
+                    </p>
+                </noscript>
 
                 <form id="verjaardagsformulier" aria-describedby="testuitleg">
                     <div class="formulierveld">
@@ -107,9 +120,9 @@
                     </div>
 
                     <fieldset>
-                        <legend>Wanneer is het kind jarig?</legend>
+                        <legend>Wat is de geboortedatum van het kind?</legend>
 
-                        <div class="datumvelden">
+                        <div class="datumvelden geboortedatum">
                             <div class="formulierveld">
                                 <label for="geboortedag">Dag</label>
                                 <input
@@ -125,7 +138,11 @@
 
                             <div class="formulierveld">
                                 <label for="geboortemaand">Maand</label>
-                                <select id="geboortemaand" name="geboortemaand" required>
+                                <select
+                                    id="geboortemaand"
+                                    name="geboortemaand"
+                                    required
+                                >
                                     <option value="">Kies een maand</option>
                                     <option value="1">Januari</option>
                                     <option value="2">Februari</option>
@@ -141,11 +158,26 @@
                                     <option value="12">December</option>
                                 </select>
                             </div>
+
+                            <div class="formulierveld">
+                                <label for="geboortejaar">Jaar</label>
+                                <input
+                                    type="number"
+                                    id="geboortejaar"
+                                    name="geboortejaar"
+                                    min="1900"
+                                    step="1"
+                                    placeholder="Bijv. 2018"
+                                    required
+                                >
+                            </div>
                         </div>
                     </fieldset>
 
                     <div class="formulierveld">
-                        <label for="email">E-mailadres van ouder of verzorger</label>
+                        <label for="email">
+                            E-mailadres van ouder of verzorger
+                        </label>
                         <input
                             type="email"
                             id="email"
@@ -160,9 +192,16 @@
 
                         <div class="dieren">
                             <label class="keuze dieroptie">
-                                <input type="radio" name="diertje" value="sam" required>
+                                <input
+                                    type="radio"
+                                    name="diertje"
+                                    value="sam"
+                                    required
+                                >
                                 <span>
-                                    <span class="dier-emoji" aria-hidden="true">🐿️</span>
+                                    <span class="dier-emoji" aria-hidden="true">
+                                        🐿️
+                                    </span>
                                     Sam de eekhoorn
                                 </span>
                             </label>
@@ -170,7 +209,9 @@
                             <label class="keuze dieroptie">
                                 <input type="radio" name="diertje" value="bram">
                                 <span>
-                                    <span class="dier-emoji" aria-hidden="true">🐻</span>
+                                    <span class="dier-emoji" aria-hidden="true">
+                                        🐻
+                                    </span>
                                     Bram de beer
                                 </span>
                             </label>
@@ -178,7 +219,9 @@
                             <label class="keuze dieroptie">
                                 <input type="radio" name="diertje" value="luna">
                                 <span>
-                                    <span class="dier-emoji" aria-hidden="true">🐰</span>
+                                    <span class="dier-emoji" aria-hidden="true">
+                                        🐰
+                                    </span>
                                     Luna het konijntje
                                 </span>
                             </label>
@@ -200,7 +243,11 @@
                             </label>
 
                             <label class="keuze">
-                                <input type="radio" name="bezorging" value="kaart">
+                                <input
+                                    type="radio"
+                                    name="bezorging"
+                                    value="kaart"
+                                >
                                 <span>📬 Een echte verjaardagskaart</span>
                             </label>
                         </div>
@@ -211,7 +258,12 @@
 
                         <div class="formulierveld">
                             <label for="ontvanger">Naam van de ontvanger</label>
-                            <input type="text" id="ontvanger" name="ontvanger" required>
+                            <input
+                                type="text"
+                                id="ontvanger"
+                                name="ontvanger"
+                                required
+                            >
                         </div>
 
                         <div class="formulierveld">
@@ -250,7 +302,12 @@
                         </div>
                     </fieldset>
 
-                    <button class="wood-button" type="submit">
+                    <button
+                        class="wood-button"
+                        id="testknop"
+                        type="submit"
+                        disabled
+                    >
                         Aanmelding testen 🎉
                     </button>
 
@@ -263,7 +320,10 @@
             <div class="birthday-animal" aria-hidden="true">🎊 🎈</div>
 
             <div>
-                <h2 id="vlaggenlijntitel">Een Wurzels-vlaggenlijn voor jouw feestje</h2>
+                <h2 id="vlaggenlijntitel">
+                    Een Wurzels-vlaggenlijn voor jouw feestje
+                </h2>
+
                 <p>
                     Versier je verjaardag met jouw favoriete diertjes.
                     De prijs en bestelmogelijkheid volgen nog.
