@@ -1,359 +1,210 @@
-/* Algemene instellingen */
-* {
-    box-sizing: border-box;
+/* Dezelfde basisvormgeving als de homepage */
+@import url("home.css");
+
+/* Duidelijke toetsenbordfocus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--dark-forest);
+    outline-offset: 4px;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #422b19;
-    background-color: #eaf3dc;
-}
-
-/* Navigatie */
-header {
-    padding: 24px 20px;
-    text-align: center;
-    background-color: #eaf3dc;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 16px 24px;
-    border: 2px solid #b78852;
-    border-radius: 16px;
-    background-color: #f5dfb3;
-    box-shadow: 0 4px 8px rgb(66 43 25 / 15%);
-}
-
-nav a {
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: #422b19;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #286334;
-    background-color: #ead09f;
-    text-decoration: underline;
-}
-
-nav a[aria-current="page"] {
-    color: #286334;
-    text-decoration: underline;
-    text-underline-offset: 6px;
-}
-
-nav a:focus-visible {
-    outline: 3px solid #286334;
-    outline-offset: 5px;
-}
-
-/* Hoofdinhoud */
-main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-section {
-    max-width: 600px;
-    padding: 32px;
-    border-radius: 16px;
-    background-color: #fff7e5;
-}
-
-h1 {
-    margin-top: 0;
-    font-size: clamp(32px, 6vw, 48px);
-    line-height: 1.2;
-}
-
-h2 {
-    font-size: 24px;
-}
-
-/* Originele ontwerpafbeelding */
-.verjaardag-ontwerp {
-    position: relative;
-    max-width: none;
-    padding: 0;
-    overflow: hidden;
-    border-radius: 16px;
-    background-color: transparent;
-}
-
-.verjaardag-ontwerp img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-/* Klikbare plek over het getekende terugbord */
-.terug-home {
-    position: absolute;
-    left: 3%;
-    top: 85%;
-    width: 22%;
-    height: 11%;
-    border-radius: 12px;
-}
-
-.terug-home:focus-visible {
-    outline: 4px solid #286334;
-    outline-offset: -4px;
-}
-
-.terug-home:hover {
-    background-color: rgb(255 255 255 / 15%);
-}
-
-/* Verjaardagsformulier */
-.aanmelden {
-    margin: 32px auto 0;
-}
-
-.formulierveld {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
+button,
 input,
 select {
-    width: 100%;
-    min-width: 0;
-    padding: 12px;
-    border: 2px solid #826b45;
-    border-radius: 8px;
-    background-color: #ffffff;
-    color: #422b19;
     font: inherit;
 }
 
-input:focus-visible,
-select:focus-visible {
-    outline: 3px solid #286334;
-    outline-offset: 3px;
+button {
+    cursor: pointer;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Aanmeldgedeelte */
+.aanmeldgedeelte {
+    padding: 65px 6%;
+    background: radial-gradient(ellipse at center, #fffdf3, #fff3d8);
+}
+
+.formulierkaart {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 32px;
+    border: 4px solid #d8b16c;
+    border-radius: 18px 26px;
+    background: var(--paper);
+    box-shadow: 0 7px 0 #b9a375;
+}
+
+.testbericht {
+    margin-bottom: 26px;
+    padding: 16px;
+    border: 2px solid #a9c47c;
+    border-radius: 12px;
+    background: #e5efc9;
+    line-height: 1.6;
+}
+
+.formulierveld {
+    min-width: 0;
+    margin-bottom: 20px;
+}
+
+.formulierveld label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.formulierveld input,
+.formulierveld select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 2px solid #b99a66;
+    border-radius: 10px;
+    background: #ffffff;
+    color: var(--brown);
 }
 
 fieldset {
     min-width: 0;
-    margin: 0 0 20px;
-    padding: 16px;
-    border: 2px solid #826b45;
-    border-radius: 8px;
+    margin: 0 0 24px;
+    padding: 18px;
+    border: 2px solid #d8c28d;
+    border-radius: 14px;
 }
 
 legend {
     max-width: 100%;
     padding: 0 8px;
-    font-weight: bold;
+    color: var(--forest);
+    font-weight: 800;
     overflow-wrap: anywhere;
 }
 
-/* Geboortedag en geboortemaand */
 .datumvelden {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
 }
 
 .datumvelden .formulierveld {
-    flex: 1 1 140px;
-    min-width: 0;
     margin-bottom: 0;
 }
 
-/* Dierkeuze en bezorgkeuze */
+/* Favoriet diertje */
 .dieren {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
 }
 
-.dieroptie {
+.keuze {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     min-width: 0;
-    margin: 0;
-    padding: 16px;
-    border: 2px solid #826b45;
-    border-radius: 12px;
-    background-color: #ffffff;
-    overflow-wrap: anywhere;
+    padding: 14px;
+    border: 2px solid #d8c28d;
+    border-radius: 14px;
+    background: #fff1c9;
+    font-weight: 700;
     cursor: pointer;
+    overflow-wrap: anywhere;
 }
 
-.dieroptie input {
+.keuze input {
     flex-shrink: 0;
     width: 20px;
     height: 20px;
-    margin: 0;
-    padding: 0;
-    accent-color: #286334;
+    accent-color: var(--forest);
 }
 
-.dieroptie:has(input:checked) {
-    border-color: #286334;
-    background-color: #eaf3dc;
+.keuze:has(input:checked) {
+    border-color: var(--forest);
+    background: #e1efce;
 }
 
-.dieroptie + .dieroptie {
-    margin-top: 12px;
+.dieroptie {
+    align-items: flex-start;
 }
 
-.dieren .dieroptie {
-    margin-top: 0;
-}
-
-/* Onderkant van de pagina */
-footer {
-    padding: 20px;
+.dier-emoji {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 3rem;
     text-align: center;
 }
 
-/* Kleinere afstanden op mobiele schermen */
-@media (max-width: 600px) {
-    header {
-        padding: 20px 16px;
-    }
-
-    nav {
-        gap: 12px;
-        padding: 12px;
-    }
-
-    main {
-        padding: 24px 16px;
-    }
-
-    section {
-        padding: 24px;
-    }
+.bezorgkeuzes {
+    display: grid;
+    gap: 12px;
 }
 
-/* Dierkeuze op zeer smalle schermen */
-@media (max-width: 400px) {
-    .dieren {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Klikbare navigatie over het menu in de afbeelding */
-.ontwerp-menu {
-    position: absolute;
-    inset: 0;
-    display: block;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    pointer-events: none;
-}
-
-.ontwerp-menu a {
-    position: absolute;
-    top: 17%;
-    height: 8%;
-    padding: 0;
-    border-radius: 6px;
-    pointer-events: auto;
-}
-
-/* Home */
-.ontwerp-home {
-    left: 9%;
-    width: 15%;
-}
-
-/* Verjaardag */
-.ontwerp-verjaardag {
-    left: 25%;
-    width: 13%;
-}
-
-/* Kleurplaten */
-.ontwerp-kleurplaten {
-    left: 40%;
-    width: 15%;
-}
-
-.ontwerp-menu a:hover {
-    background-color: rgb(255 255 255 / 20%);
-}
-
-.ontwerp-menu a:focus-visible {
-    outline: 3px solid #286334;
-    outline-offset: -3px;
-}
-
-/* Testknop van het formulier */
-.aanmelden button {
-    padding: 14px 24px;
-    border: 2px solid #286334;
-    border-radius: 10px;
-    background-color: #286334;
-    color: #ffffff;
-    font: inherit;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.aanmelden button:hover {
-    background-color: #1d4b27;
-}
-
-.aanmelden button:focus-visible {
-    outline: 3px solid #422b19;
-    outline-offset: 4px;
-}
-
-/* Resultaat van de formuliertest */
+/* Testbevestiging */
 #formuliermelding {
     overflow-wrap: anywhere;
 }
 
 #formuliermelding:not(:empty) {
+    margin-top: 24px;
     padding: 16px;
-    border: 2px solid #286334;
-    border-radius: 10px;
-    background-color: #eaf3dc;
+    border: 2px solid #a9c47c;
+    border-radius: 12px;
+    background: #e5efc9;
 }
 
-/* Vlaggenlijn */
-.vlaggenlijn {
-    margin: 32px auto 0;
-}
-
-.vlaggenlijn button {
+.wood-button {
     max-width: 100%;
-    padding: 14px 24px;
-    border: 2px solid #826b45;
-    border-radius: 10px;
-    background-color: #f5dfb3;
-    color: #422b19;
-    font: inherit;
-    font-weight: bold;
+    text-align: center;
 }
 
-.vlaggenlijn button:disabled {
+.wood-button:disabled {
+    opacity: 0.7;
     cursor: not-allowed;
-    opacity: 0.75;
+}
+
+.wood-button:disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 0 #8a592d;
+}
+
+/* Mobiel */
+@media (max-width: 600px) {
+    .aanmeldgedeelte {
+        padding: 40px 16px;
+    }
+
+    .formulierkaart {
+        padding: 20px 16px;
+    }
+
+    fieldset {
+        padding: 14px;
+    }
+
+    .dieren,
+    .datumvelden {
+        grid-template-columns: 1fr;
+    }
+
+    .dieroptie {
+        align-items: center;
+    }
+
+    .dieroptie > span {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .dier-emoji {
+        margin-bottom: 0;
+        font-size: 2.5rem;
+    }
 }

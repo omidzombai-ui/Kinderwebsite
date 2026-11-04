@@ -1,12 +1,37 @@
+/* Mobiel menu, zoals op de homepage */
+const menuToggle = document.getElementById("menuToggle");
+const navigation = document.getElementById("navigation");
+
+if (menuToggle && navigation) {
+    menuToggle.addEventListener("click", function () {
+        const isOpen = navigation.classList.toggle("open");
+
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Menu sluiten" : "Menu openen"
+        );
+
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navigation.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            navigation.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Menu openen");
+            menuToggle.textContent = "☰";
+            menuToggle.focus();
+        }
+    });
+}
+
+/* Adresvelden bij een echte kaart */
 const bezorgopties = document.querySelectorAll(
     'input[name="bezorging"]'
 );
 
-const adresvelden = document.querySelector("#adresvelden");
-const formulier = document.querySelector("#verjaardagsformulier");
-const dagveld = document.querySelector("#geboortedag");
-const maandveld = document.querySelector("#geboortemaand");
-const melding = document.querySelector("#formuliermelding");
+const adresvelden = document.getElementById("adresvelden");
 
 function werkAdresveldenBij() {
     const gekozenOptie = document.querySelector(
@@ -29,51 +54,82 @@ bezorgopties.forEach(function (optie) {
 
 werkAdresveldenBij();
 
-function controleerDatum() {
-    dagveld.setCustomValidity("");
+/* Formuliercontrole */
+const formulier = document.getElementById("verjaardagsformulier");
+const dagveld = document.getElementById("geboortedag");
+const maandveld = document.getElementById("geboortemaand");
+const melding = document.getElementById("formuliermelding");
 
-    const dag = Number(dagveld.value);
-    const maand = Number(maandveld.value);
+if (formulier && dagveld && maandveld && melding) {
+    function controleerDatum() {
+        dagveld.setCustomValidity("");
 
-    if (!dag || !maand) {
-        return;
+        const dag = Number(dagveld.value);
+        const maand = Number(maandveld.value);
+
+        if (!dagveld.value || !maandveld.value) {
+            return;
+        }
+
+        // 29 februari mag als jaarlijkse verjaardag gekozen worden.
+        const dagenPerMaand = [
+            31, 29, 31, 30, 31, 30,
+            31, 31, 30, 31, 30, 31
+        ];
+
+        const maximum = dagenPerMaand[maand - 1];
+
+        if (
+            !Number.isInteger(dag) ||
+            !maximum ||
+            dag < 1 ||
+            dag > maximum
+        ) {
+            dagveld.setCustomValidity(
+                "Kies een geldige dag voor de geselecteerde maand."
+            );
+        }
     }
 
-    // Februari heeft hier 29 dagen, zodat 29 februari gekozen kan worden.
-    const dagenPerMaand = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    const maximum = dagenPerMaand[maand - 1];
+    dagveld.addEventListener("input", controleerDatum);
+    maandveld.addEventListener("change", controleerDatum);
 
-    if (!Number.isInteger(dag) || dag < 1 || dag > maximum) {
-        dagveld.setCustomValidity(
-            "Kies een geldige dag voor de geselecteerde maand."
-        );
+    function wisMelding() {
+        melding.textContent = "";
     }
-}
 
-dagveld.addEventListener("input", controleerDatum);
-maandveld.addEventListener("change", controleerDatum);
+    formulier.addEventListener("input", wisMelding);
+    formulier.addEventListener("change", wisMelding);
 
-formulier.addEventListener("input", function () {
-    melding.textContent = "";
-});
+    formulier.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-formulier.addEventListener("change", function () {
-    melding.textContent = "";
-});
+        controleerDatum();
 
-formulier.addEventListener("submit", function (event) {
-    event.preventDefault();
+        if (!formulier.reportValidity()) {
+            return;
+        }
+
+        const voornaamveld = document.getElementById("voornaam");
+
+        if (!voornaamveld.value.trim()) {
+            voornaamveld.setCustomValidity("Vul een voornaam in.");
+            voornaamveld.reportValidity();
+            return;
+        }
+
+        melding.textContent =
+            "De test is gelukt! De verplichte velden zijn ingevuld " +
+            "en de datum is geldig. Er is niets opgeslagen, " +
+            "geen mail verstuurd en geen kaart aangevraagd.";
+    });
+
+    document.getElementById("voornaam").addEventListener(
+        "input",
+        function (event) {
+            event.target.setCustomValidity("");
+        }
+    );
 
     controleerDatum();
-
-    if (!formulier.reportValidity()) {
-        return;
-    }
-
-    melding.textContent =
-        "De test is gelukt! De verplichte velden zijn ingevuld " +
-        "en de datum is geldig. Er is niets opgeslagen, " +
-        "geen mail verstuurd en geen kaart aangevraagd.";
-});
-
-controleerDatum();
+}
