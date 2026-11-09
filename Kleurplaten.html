@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -10,17 +9,15 @@
     <link rel="stylesheet" href="Kleurplaten.css">
 
     <script src="home.js" defer></script>
-    <script src="Kleurplaten.js" defer></script>
 </head>
 <body>
-
     <header class="site-header">
         <a href="home.html" class="logo">🌿 de Wurzels 🌿</a>
 
         <nav class="navigation" id="navigation">
             <a href="home.html">🏡 Home</a>
-            <a href="verjaardag.html" class="active">🎂 Verjaardag</a>
-            <a href="Kleurplaten.html">🎨 Kleurplaten</a>
+            <a href="verjaardag.html">🎂 Verjaardag</a>
+            <a href="Kleurplaten.html" class="active" aria-current="page">🎨 Kleurplaten</a>
             <a href="berichten.html">✉️ Post</a>
             <a href="puzzels.html">🧩 Puzzels</a>
             <a href="tijdschriften.html">📖 Tijdschrift</a>
@@ -32,179 +29,24 @@
         </button>
     </header>
 
-    <main>
-
-        <!-- Verjaardag welkom -->
-        <section class="hero birthday-hero">
-
-            <div class="sunshine"></div>
-
-            <div class="welcome-sign">
-                <span class="leaf">🎈</span>
-
-                <p class="eyebrow">Het is feest in het Wurzelsbos!</p>
-
-                <h1>Hiep hiep hoera! 🎂</h1>
-
-                <p class="welcome-text">
-                    Ben jij binnenkort jarig?
-                    De Wurzels willen jouw verjaardag
-                    graag samen met jou vieren!
-
-                    Vul je gegevens in en ontvang
-                    een leuke verjaardagswens.
-                </p>
-
-                <a href="#verjaardag-formulier" class="wood-button">
-                    Vier het met ons! ↓
-                </a>
-            </div>
-
-            <div class="forest-scene birthday-scene">
-
-                <div class="bird">🐦</div>
-                <div class="butterfly">🦋</div>
-
-                <div class="animal animal-left">
-                    <span>🐿️</span>
-                    <small>Sam de eekhoorn</small>
-                </div>
-
-                <div class="animal animal-center">
-                    <span>🐻</span>
-                    <small>Bram de beer</small>
-                </div>
-
-                <div class="animal animal-right">
-                    <span>🐰</span>
-                    <small>Luna het konijntje</small>
-                </div>
-
-                <div class="mushroom">🍄</div>
-                <div class="flower flower-one">🌼</div>
-                <div class="flower flower-two">🎁</div>
-
-            </div>
-
-            <div class="grass"></div>
-
+    <main class="coloring-page">
+        <section class="coloring-intro">
+            <span class="coloring-icon" aria-hidden="true">🎨</span>
+            <h1>Kleurplaten</h1>
+            <p>Haal je kleurpotloden maar tevoorschijn! Bekijk onze kleurplaten en kleur gezellig mee met de Wurzels.</p>
         </section>
 
-        <!-- Verjaardag formulier -->
-        <section class="birthday-content" id="verjaardag-formulier">
-
-            <div class="section-heading">
-                <span>🎂 🌸 🎈</span>
-
-                <h2>Vertel ons wanneer je jarig bent!</h2>
-
-                <p>
-                    Vul het formulier in en kies jouw favoriete
-                    Wurzels-diertje.
-                </p>
-            </div>
-
-            <div class="birthday-layout">
-
-                <form id="birthdayForm" class="birthday-form">
-
-                    <h3>🎉 Mijn verjaardag</h3>
-
-                    <label for="naam">Hoe heet je?</label>
-                    <input
-                        type="text"
-                        id="naam"
-                        name="naam"
-                        placeholder="Vul je naam in"
-                        maxlength="40"
-                        required
-                    >
-
-                    <label for="datum">Wanneer ben je jarig?</label>
-                    <input
-                        type="date"
-                        id="datum"
-                        name="datum"
-                        required
-                    >
-
-                    <label for="dier">Wie is jouw favoriete diertje?</label>
-
-                    <select id="dier" name="dier" required>
-                        <option value="">Kies een diertje</option>
-                        <option value="Sam de eekhoorn">
-                            🐿️ Sam de eekhoorn
-                        </option>
-                        <option value="Bram de beer">
-                            🐻 Bram de beer
-                        </option>
-                        <option value="Luna het konijntje">
-                            🐰 Luna het konijntje
-                        </option>
-                    </select>
-
-                    <label for="wens">
-                        Wat is jouw verjaardagswens?
-                    </label>
-
-                    <textarea
-                        id="wens"
-                        name="wens"
-                        rows="4"
-                        maxlength="250"
-                        placeholder="Vertel ons jouw verjaardagswens..."
-                    ></textarea>
-
-                    <button type="submit" class="wood-button submit-button">
-                        Verstuur mijn verjaardagswens 🎁
-                    </button>
-
-                    <p id="birthdayMessage"
-                       class="birthday-message"
-                       role="status"
-                       aria-live="polite"></p>
-
-                </form>
-
-                <!-- Feestelijk plaatje naast het formulier -->
-                <div class="birthday-card">
-
-                    <div class="card-decoration">🎈 🎉 🎈</div>
-
-                    <div class="birthday-cake">🎂</div>
-
-                    <h2>Een feestje voor jou!</h2>
-
-                    <p id="previewText">
-                        Vul je naam in en de Wurzels
-                        maken een persoonlijke verjaardagswens!
-                    </p>
-
-                    <div class="card-animals">
-                        🐿️ 🐻 🐰
-                    </div>
-
-                    <p class="card-bottom">
-                        Veel liefs van de Wurzels! 💚
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
+        <figure class="coloring-preview">
+            <img src="achtergrond-voorbeeld.png"
+                 alt="Voorbeeld van de Wurzels-kleurplatenpagina met vier tekeningen om in te kleuren">
+            <figcaption>Veel kleurplezier van de Wurzels! 🌿</figcaption>
+        </figure>
     </main>
 
     <footer class="site-footer">
-
         <p>🌿 Met liefde gemaakt door de Wurzels 🌿</p>
-
-        <a href="contact.html">Contact</a>
-
+        <a href="home.html">Terug naar Home</a>
         <p class="copyright">© 2026 de Wurzels</p>
-
     </footer>
-
 </body>
 </html>
