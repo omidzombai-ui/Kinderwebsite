@@ -1,19 +1,26 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Download en print leuke Wurzels-kleurplaten.">
-  <title>De Wurzels - Kleurplaten</title>
-  <link rel="stylesheet" href="Kleurplaten.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>de Wurzels - Verjaardag</title>
+
+    <!-- Dezelfde vormgeving als de homepagina -->
+    <link rel="stylesheet" href="Kleurplaten.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="Kleurplaten.js" defer></script>
+    <script src="home.js" defer></script>
 </head>
 <body>
-   <header class="site-header">
+
+    <header class="site-header">
         <a href="home.html" class="logo">🌿 de Wurzels 🌿</a>
 
         <nav class="navigation" id="navigation">
-            <a href="home.html" class="active">🏡 Home</a>
-            <a href="verjaardag.html">🎂 Verjaardag</a>
+            <a href="home.html">🏡 Home</a>
+            <a href="verjaardag.html" class="active">🎂 Verjaardag</a>
             <a href="kleurplaten.html">🎨 Kleurplaten</a>
             <a href="berichten.html">✉️ Post</a>
             <a href="puzzels.html">🧩 Puzzels</a>
@@ -25,38 +32,180 @@
             ☰
         </button>
     </header>
-  <main class="pagina" aria-label="De Wurzels kleurplaten">
-    <img class="ontwerp" src="achtergrond-voorbeeld.png"
-         alt="De originele voorbeeldpagina van De Wurzels met bosachtergrond en vier kleurplaten">
-        </nav>
 
-        <button class="menu-toggle" id="menuToggle"
-                aria-label="Menu openen" aria-expanded="false">
-            ☰
-        </button>
-    </header>
-  <main class="pagina" aria-label="De Wurzels kleurplaten">
-    <img class="ontwerp" src="achtergrond-voorbeeld.png"
-         alt="De originele voorbeeldpagina van De Wurzels met bosachtergrond en vier kleurplaten">
+    <main>
 
-    <!-- Klikbare vlakken liggen precies over de vier kleurplaten in het voorbeeld. -->
-    <button class="kaart kaart-1" data-index="0" aria-label="Open kleurplaat De Wurzels samen"></button>
-    <button class="kaart kaart-2" data-index="1" aria-label="Open kleurplaat In de speelboom"></button>
-    <button class="kaart kaart-3" data-index="2" aria-label="Open kleurplaat In de bloementuin"></button>
-    <button class="kaart kaart-4" data-index="3" aria-label="Open kleurplaat Lente avontuur"></button>
-    <a class="terug-link" href="#" aria-label="Terug naar de homepage"></a>
-  </main>
+        <!-- Verjaardag welkom -->
+        <section class="hero birthday-hero">
 
-  <dialog id="kleurplaatDialoog" class="dialoog">
-    <button class="sluiten" type="button" aria-label="Sluiten">×</button>
-    <h1 id="kleurplaatTitel">Kleurplaat</h1>
-    <img id="kleurplaatAfbeelding" src="" alt="Geselecteerde kleurplaat">
-    <p>Kies hieronder of je de kleurplaat wilt downloaden of afdrukken.</p>
-    <div class="acties">
-      <a id="downloadKnop" class="actie" download>Download kleurplaat</a>
-      <button id="printKnop" class="actie" type="button">Afdrukken</button>
-    </div>
-  </dialog>
-  <script src="Kleurplaten.js"></script>
+            <div class="sunshine"></div>
+
+            <div class="welcome-sign">
+                <span class="leaf">🎈</span>
+
+                <p class="eyebrow">Het is feest in het Wurzelsbos!</p>
+
+                <h1>Hiep hiep hoera! 🎂</h1>
+
+                <p class="welcome-text">
+                    Ben jij binnenkort jarig?
+                    De Wurzels willen jouw verjaardag
+                    graag samen met jou vieren!
+
+                    Vul je gegevens in en ontvang
+                    een leuke verjaardagswens.
+                </p>
+
+                <a href="#verjaardag-formulier" class="wood-button">
+                    Vier het met ons! ↓
+                </a>
+            </div>
+
+            <div class="forest-scene birthday-scene">
+
+                <div class="bird">🐦</div>
+                <div class="butterfly">🦋</div>
+
+                <div class="animal animal-left">
+                    <span>🐿️</span>
+                    <small>Sam de eekhoorn</small>
+                </div>
+
+                <div class="animal animal-center">
+                    <span>🐻</span>
+                    <small>Bram de beer</small>
+                </div>
+
+                <div class="animal animal-right">
+                    <span>🐰</span>
+                    <small>Luna het konijntje</small>
+                </div>
+
+                <div class="mushroom">🍄</div>
+                <div class="flower flower-one">🌼</div>
+                <div class="flower flower-two">🎁</div>
+
+            </div>
+
+            <div class="grass"></div>
+
+        </section>
+
+        <!-- Verjaardag formulier -->
+        <section class="birthday-content" id="verjaardag-formulier">
+
+            <div class="section-heading">
+                <span>🎂 🌸 🎈</span>
+
+                <h2>Vertel ons wanneer je jarig bent!</h2>
+
+                <p>
+                    Vul het formulier in en kies jouw favoriete
+                    Wurzels-diertje.
+                </p>
+            </div>
+
+            <div class="birthday-layout">
+
+                <form id="birthdayForm" class="birthday-form">
+
+                    <h3>🎉 Mijn verjaardag</h3>
+
+                    <label for="naam">Hoe heet je?</label>
+                    <input
+                        type="text"
+                        id="naam"
+                        name="naam"
+                        placeholder="Vul je naam in"
+                        maxlength="40"
+                        required
+                    >
+
+                    <label for="datum">Wanneer ben je jarig?</label>
+                    <input
+                        type="date"
+                        id="datum"
+                        name="datum"
+                        required
+                    >
+
+                    <label for="dier">Wie is jouw favoriete diertje?</label>
+
+                    <select id="dier" name="dier" required>
+                        <option value="">Kies een diertje</option>
+                        <option value="Sam de eekhoorn">
+                            🐿️ Sam de eekhoorn
+                        </option>
+                        <option value="Bram de beer">
+                            🐻 Bram de beer
+                        </option>
+                        <option value="Luna het konijntje">
+                            🐰 Luna het konijntje
+                        </option>
+                    </select>
+
+                    <label for="wens">
+                        Wat is jouw verjaardagswens?
+                    </label>
+
+                    <textarea
+                        id="wens"
+                        name="wens"
+                        rows="4"
+                        maxlength="250"
+                        placeholder="Vertel ons jouw verjaardagswens..."
+                    ></textarea>
+
+                    <button type="submit" class="wood-button submit-button">
+                        Verstuur mijn verjaardagswens 🎁
+                    </button>
+
+                    <p id="birthdayMessage"
+                       class="birthday-message"
+                       role="status"
+                       aria-live="polite"></p>
+
+                </form>
+
+                <!-- Feestelijk plaatje naast het formulier -->
+                <div class="birthday-card">
+
+                    <div class="card-decoration">🎈 🎉 🎈</div>
+
+                    <div class="birthday-cake">🎂</div>
+
+                    <h2>Een feestje voor jou!</h2>
+
+                    <p id="previewText">
+                        Vul je naam in en de Wurzels
+                        maken een persoonlijke verjaardagswens!
+                    </p>
+
+                    <div class="card-animals">
+                        🐿️ 🐻 🐰
+                    </div>
+
+                    <p class="card-bottom">
+                        Veel liefs van de Wurzels! 💚
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <p>🌿 Met liefde gemaakt door de Wurzels 🌿</p>
+
+        <a href="contact.html">Contact</a>
+
+        <p class="copyright">© 2026 de Wurzels</p>
+
+    </footer>
+
 </body>
 </html>
