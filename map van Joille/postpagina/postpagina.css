@@ -1,235 +1,411 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
 
-:root {
-    --forest: #315d35;
-    --dark-forest: #23452a;
-    --leaf: #6d9b48;
-    --cream: #fff3d6;
-    --wood: #b77b42;
-    --brown: #59391f;
-    --paper: #fffaf0;
+/* WURZELPOST - EIGEN STIJL */
+
+/* Welkom */
+
+.post-hero {
+    min-height: 480px;
+    padding: 65px 6%;
+    background:
+        radial-gradient(circle at 80% 15%, #fff1a0, transparent 35%),
+        linear-gradient(#9ccc7b, #dcecae);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+    border-bottom: 12px solid #78a64e;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: 'Baloo 2', cursive;
-    color: var(--brown);
-    background: #fff8e8;
-}
-
-/* Bovenkant van de website */
-
-.site-header {
-    padding: 15px 5% 20px;
+.post-welcome {
+    background: #fff1c9;
+    border: 5px solid #b77b42;
+    border-radius: 20px 30px 20px 30px;
+    box-shadow: 0 8px 0 #8a592d;
+    padding: 35px;
+    max-width: 550px;
     text-align: center;
-    background: #46743e;
-    border-bottom: 7px solid #b4d47e;
 }
 
-.logo {
-    display: inline-block;
-    padding: 3px 35px 8px;
-    margin-bottom: 16px;
-    background: linear-gradient(#ffe6a5, #d9a766);
-    border: 4px solid #a86c37;
+.post-decoration {
+    font-size: 2rem;
+}
+
+.post-welcome h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #315d35;
+    margin: 15px 0;
+}
+
+.post-welcome p {
+    font-size: 1.15rem;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+/* Bewegende dieren */
+
+.post-animals {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 15px;
+}
+
+.post-animal {
+    text-align: center;
+    animation: postBounce 3s ease-in-out infinite;
+}
+
+.post-animal:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.post-animal:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.post-animal span {
+    font-size: clamp(4rem, 8vw, 7rem);
+    display: block;
+}
+
+.post-animal p {
+    background: #fff1c9;
+    border: 2px solid #b77b42;
     border-radius: 20px;
-    box-shadow: 0 5px 0 #754822;
-    font-size: 3rem;
+    padding: 5px 15px;
     font-weight: 800;
 }
 
-/* Navigatiemenu */
-
-.navigation {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-width: 1150px;
-    margin: auto;
-    padding: 12px;
-    background: #fff1c9;
-    border: 3px solid #d8b16c;
-    border-radius: 35px;
+@keyframes postBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
-.navigation a {
-    padding: 7px 14px;
-    border-radius: 25px;
-    color: var(--brown);
-    text-decoration: none;
-    font-weight: 700;
-}
+/* Dieren kiezen */
 
-.navigation a:hover,
-.navigation a.active {
-    background: #d8e7b3;
-    color: var(--dark-forest);
-}
-
-/* Achtergrond van de postpagina */
-
-.postpagina {
-    min-height: 650px;
+.choose-section {
     padding: 70px 6%;
-    background: linear-gradient(
-        #a6ce82,
-        #dcebb2,
-        #f3e9b9
-    );
+    background: #fff8e8;
 }
 
-/* Inhoud naast elkaar */
-
-.post-inhoud {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    max-width: 1200px;
+.animal-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1050px;
     margin: auto;
+}
+
+.animal-card {
+    font-family: inherit;
+    color: #59391f;
+    padding: 25px;
+    background: #e5efce;
+    border: 4px solid #a9c47c;
+    border-radius: 22px;
+    box-shadow: 0 6px 0 #8aaa66;
+    text-align: center;
+    cursor: pointer;
+    transition: transform .2s, background .2s;
+}
+
+.animal-card:nth-child(2) {
+    background: #fff0bf;
+    border-color: #dfc57e;
+}
+
+.animal-card:nth-child(3) {
+    background: #ffe5e1;
+    border-color: #e8b8af;
+}
+
+.animal-card:hover {
+    transform: translateY(-7px);
+}
+
+.animal-card.selected {
+    outline: 4px solid #315d35;
+    outline-offset: 3px;
+}
+
+.animal-emoji {
+    display: block;
+    font-size: 5rem;
+}
+
+.animal-card h3 {
+    color: #315d35;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.animal-card p {
+    margin-bottom: 15px;
+}
+
+.choose-label {
+    display: inline-block;
+    background: #315d35;
+    color: white;
+    padding: 7px 18px;
+    border-radius: 25px;
+    font-weight: 700;
 }
 
 /* Briefpapier */
 
-.brief-kaart {
-    width: 100%;
-    max-width: 600px;
-    padding: 35px;
-    background: linear-gradient(#fff3d6, #f5dda8);
+.letter-section {
+    padding: 75px 20px;
+    background:
+        linear-gradient(#d3e8b5, #a8ce83);
+}
+
+.letter-paper {
+    max-width: 700px;
+    margin: auto;
+    background: #fffaf0;
     border: 5px solid #c18b4e;
-    border-radius: 20px;
-    box-shadow: 0 8px 0 #996737;
+    border-radius: 18px 30px;
+    box-shadow: 0 10px 0 #946637;
+    padding: 40px;
 }
 
-.brief-kaart h1 {
-    margin-top: 0;
-    font-size: 2.5rem;
-    color: var(--brown);
-}
-
-.brief-kaart p {
-    font-size: 1.15rem;
-    line-height: 1.6;
-}
-
-/* Het formulier */
-
-#post-formulier {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 25px;
-}
-
-#post-formulier label {
-    font-weight: 700;
-}
-
-#post-formulier input,
-#post-formulier textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #c18b4e;
-    border-radius: 12px;
-    background: var(--paper);
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-#post-formulier textarea {
-    resize: vertical;
-}
-
-/* Houten knop */
-
-.wood-button {
-    padding: 12px 23px;
-    border: 3px solid #98602e;
-    border-radius: 12px;
-    background: linear-gradient(#f4cf85, #d49a54);
-    box-shadow: 0 4px 0 #8a592d;
-    color: #563519;
-    font-family: inherit;
-    font-size: 1.1rem;
-    font-weight: 800;
-    cursor: pointer;
-}
-
-.wood-button:hover {
-    background: #f4cf85;
-}
-
-/* Brievenbuskaart */
-
-.brievenbus {
-    width: 300px;
-    min-height: 280px;
-    padding: 35px 25px;
-    background: #52794b;
-    border: 8px solid #754c2b;
-    border-radius: 35px 35px 15px 15px;
-    box-shadow: 8px 10px 0 #385d35;
-    color: var(--cream);
+.letter-heading {
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.brievenbus h2 {
-    margin-top: 20px;
-    padding: 15px;
-    background: var(--cream);
-    border-radius: 10px;
-    color: var(--brown);
+.letter-heading span {
+    font-size: 3.5rem;
+}
+
+.letter-heading h2 {
+    color: #315d35;
     font-size: 2rem;
 }
 
-.brievenbus p {
-    font-size: 1.2rem;
+.letter-heading p {
+    font-size: 1.1rem;
 }
 
-/* Onderkant */
+/* Formulier */
 
-.site-footer {
-    padding: 30px 15px;
-    background: var(--forest);
-    color: var(--cream);
+#postForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#postForm label {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #315d35;
+}
+
+#postForm input,
+#postForm select,
+#postForm textarea {
+    width: 100%;
+    padding: 14px;
+    border: 3px solid #d7bd8d;
+    border-radius: 12px;
+    background: #fffdf7;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #59391f;
+}
+
+#postForm textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+#postForm input:focus,
+#postForm select:focus,
+#postForm textarea:focus {
+    outline: 3px solid #a9c47c;
+    border-color: #315d35;
+}
+
+.privacy-note {
+    padding: 12px;
+    background: #e7f1d8;
+    border-radius: 12px;
+    font-size: .95rem;
+}
+
+.send-button {
+    font-family: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.post-result {
+    margin-top: 25px;
+    padding: 22px;
+    background: #e5efce;
+    border: 3px dashed #6d9b48;
+    border-radius: 15px;
+    overflow-wrap: anywhere;
+}
+
+.post-result[hidden] {
+    display: none;
+}
+
+.post-result h3 {
+    color: #315d35;
+    margin-bottom: 12px;
+}
+
+.post-result p {
+    margin-bottom: 10px;
+}
+
+/* Voorbeeldbrieven */
+
+.mailbox-section {
+    padding: 70px 6%;
+    background: #fff8e8;
+}
+
+.mail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.mail-card {
+    background: #fff0bf;
+    padding: 30px;
+    border: 3px solid #d8b16c;
+    border-radius: 20px;
+    box-shadow: 0 6px 0 #b99b65;
     text-align: center;
 }
 
-.copyright {
-    opacity: 0.8;
+.mail-card:nth-child(2) {
+    background: #e1efce;
 }
 
-/* Voor kleinere schermen */
+.mail-card:nth-child(3) {
+    background: #ffe5e1;
+}
 
-@media (max-width: 750px) {
-    .post-inhoud {
-        flex-direction: column;
-        gap: 35px;
+.mail-icon {
+    font-size: 4rem;
+}
+
+.mail-card h3 {
+    color: #315d35;
+    margin: 10px 0;
+    font-size: 1.4rem;
+}
+
+.mail-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.mail-card span {
+    font-weight: 800;
+    color: #315d35;
+}
+
+/* Tijdschrift */
+
+.magazine-post {
+    padding: 60px 20px;
+    background: #e5efc9;
+    text-align: center;
+}
+
+.magazine-content {
+    max-width: 650px;
+    margin: auto;
+}
+
+.magazine-emoji {
+    font-size: 4rem;
+}
+
+.magazine-content h2 {
+    color: #315d35;
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+.magazine-content p {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .animal-options,
+    .mail-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobiel */
+
+@media (max-width: 600px) {
+    .post-hero {
+        padding: 35px 18px;
     }
 
-    .postpagina {
-        padding: 40px 20px;
+    .post-welcome {
+        padding: 25px 18px;
     }
 
-    .brief-kaart {
-        padding: 25px;
-    }
-
-    .brief-kaart h1 {
-        font-size: 2rem;
-    }
-
-    .brievenbus {
+    .post-animals {
         width: 100%;
-        max-width: 300px;
+        gap: 5px;
     }
 
-    .logo {
-        font-size: 2rem;
+    .post-animal span {
+        font-size: 4rem;
+    }
+
+    .animal-options,
+    .mail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .choose-section,
+    .mailbox-section {
+        padding: 45px 20px;
+    }
+
+    .letter-paper {
+        padding: 25px 18px;
+    }
+
+    .letter-heading h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/* Minder beweging indien gewenst */
+
+@media (prefers-reduced-motion: reduce) {
+    .post-animal {
+        animation: none;
+    }
+
+    .animal-card {
+        transition: none;
     }
 }

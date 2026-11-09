@@ -1,84 +1,283 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postpagina</title>
+    <title>Wurzelpost - de Wurzels</title>
+
+    <link rel="stylesheet" href="../../home.css">
     <link rel="stylesheet" href="postpagina.css">
-<!-- HTML-bestand maakt gebruik van de opmaak uit postpagina.css -->
+
+    <script src="../../home.js" defer></script>
+    <script src="postpagina.js" defer></script>
 </head>
-    <body>
+<body>
 
     <header class="site-header">
-        <div class="logo">de Wurzels</div>
+        <a href="../../home.html" class="logo">
+            🌿 de Wurzels 🌿
+        </a>
 
-        <nav class="navigation">
-            <a href="../index.html">Home</a>
-            <a href="#">Verjaardag</a>
-            <a href="#">Kleurplaten</a>
-            <a href="#" class="active">Post</a>
-            <a href="#">Puzzels</a>
-            <a href="#">Tijdschrift</a>
+        <nav class="navigation" id="navigation">
+            <a href="../../home.html">🏡 Home</a>
+            <a href="../../verjaardag.html">🎂 Verjaardag</a>
+            <a href="../../Kleurplaten.html">🎨 Kleurplaten</a>
+            <a href="postpagina.html" class="active">✉️ Post</a>
+            <a href="puzzels.html">🧩 Puzzels</a>
+            <a href="tijdschriften.html">📖 Tijdschrift</a>
         </nav>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Menu openen"
+                aria-expanded="false">
+            ☰
+        </button>
     </header>
 
-    <main class="postpagina">
+    <main>
 
-        <section class="post-inhoud">
-
-            <div class="brief-kaart">
-                <h1>Schrijf ons een bericht!</h1>
-
+        <!-- WELKOM -->
+        <section class="post-hero">
+            <div class="post-welcome">
+                <span class="post-decoration">🍃 💌 🍃</span>
+                <h1>Welkom bij de Wurzelpost!</h1>
                 <p>
-                    Heb je een vraag, een leuke boodschap
-                    of wil je iets delen met de Wurzels?
-                    Dan kun je ons een briefje sturen!
+                    Heb jij iets leuks meegemaakt?
+                    Of wil je een vraag stellen aan
+                    één van onze bosvriendjes?
                 </p>
-
                 <p>
-                    We vinden het superleuk om iets
-                    van je te horen!
+                    Sam, Bram en Luna vinden het
+                    geweldig om post van jou te krijgen!
                 </p>
+                <a href="#schrijfbrief" class="wood-button">
+                    💌 Schrijf een brief!
+                </a>
+            </div>
 
-                <form id="post-formulier">
+            <div class="post-animals">
+                <div class="post-animal">
+                    <span>🐿️</span>
+                    <p>Sam</p>
+                </div>
+                <div class="post-animal">
+                    <span>🐻</span>
+                    <p>Bram</p>
+                </div>
+                <div class="post-animal">
+                    <span>🐰</span>
+                    <p>Luna</p>
+                </div>
+            </div>
+        </section>
 
-                    <label for="naam">Hoe heet je?</label>
+        <!-- DIER KIEZEN -->
+        <section class="choose-section" id="schrijfbrief">
+            <div class="section-heading">
+                <span>🌼 🍃 🌼</span>
+                <h2>Voor wie is jouw brief?</h2>
+                <p>
+                    Kies jouw favoriete bosvriendje!
+                </p>
+            </div>
+
+            <div class="animal-options">
+
+                <button type="button"
+                        class="animal-card"
+                        data-animal="Sam">
+                    <span class="animal-emoji">🐿️</span>
+                    <h3>Sam de eekhoorn</h3>
+                    <p>Dol op avontuur en nootjes!</p>
+                    <span class="choose-label">Kies Sam</span>
+                </button>
+
+                <button type="button"
+                        class="animal-card"
+                        data-animal="Bram">
+                    <span class="animal-emoji">🐻</span>
+                    <h3>Bram de beer</h3>
+                    <p>Een lieve en gezellige vriend!</p>
+                    <span class="choose-label">Kies Bram</span>
+                </button>
+
+                <button type="button"
+                        class="animal-card"
+                        data-animal="Luna">
+                    <span class="animal-emoji">🐰</span>
+                    <h3>Luna het konijntje</h3>
+                    <p>Houdt van bloemen en spelen!</p>
+                    <span class="choose-label">Kies Luna</span>
+                </button>
+
+            </div>
+        </section>
+
+        <!-- BRIEF SCHRIJVEN -->
+        <section class="letter-section">
+            <div class="letter-paper">
+
+                <div class="letter-heading">
+                    <span>✉️</span>
+                    <h2>Schrijf jouw Wurzelbrief!</h2>
+                    <p>
+                        Vertel jouw verhaal of stel
+                        een leuke vraag.
+                    </p>
+                </div>
+
+                <form id="postForm">
+
+                    <label for="childName">
+                        🌸 Hoe heet jij?
+                    </label>
                     <input
                         type="text"
-                        id="naam"
-                        placeholder="Jouw naam"
+                        id="childName"
+                        name="childName"
+                        placeholder="Jouw voornaam"
+                        maxlength="30"
                         required
                     >
 
-                    <label for="bericht">Jouw bericht</label>
+                    <label for="chosenAnimal">
+                        🐾 Aan wie schrijf je?
+                    </label>
+                    <select id="chosenAnimal"
+                            name="chosenAnimal" required>
+                        <option value="">
+                            Kies een diertje
+                        </option>
+                        <option value="Sam">
+                            🐿️ Sam de eekhoorn
+                        </option>
+                        <option value="Bram">
+                            🐻 Bram de beer
+                        </option>
+                        <option value="Luna">
+                            🐰 Luna het konijntje
+                        </option>
+                    </select>
+
+                    <label for="message">
+                        💌 Wat wil je vertellen?
+                    </label>
                     <textarea
-                        id="bericht"
-                        placeholder="Schrijf hier je brief..."
-                        rows="6"
+                        id="message"
+                        name="message"
+                        rows="7"
+                        maxlength="1000"
+                        placeholder="Lieve Wurzels, ..."
                         required
                     ></textarea>
 
-                    <button type="submit" class="wood-button">
-                        Verstuur je brief
+                    <p class="privacy-note">
+                        🔒 Gebruik alleen je voornaam.
+                        Schrijf geen adres, telefoonnummer
+                        of andere privégegevens.
+                    </p>
+
+                    <button type="submit"
+                            class="wood-button send-button">
+                        ✉️ Bekijk mijn brief!
                     </button>
 
                 </form>
+
+                <div id="postResult"
+                     class="post-result"
+                     role="status"
+                     aria-live="polite"
+                     hidden>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VOORBEELDPOST -->
+        <section class="mailbox-section">
+            <div class="section-heading">
+                <span>💌 📬 💌</span>
+                <h2>Post uit het Wurzelbos!</h2>
+                <p>
+                    Kijk eens wat onze bosvriendjes
+                    te vertellen hebben!
+                </p>
             </div>
 
-            <div class="brievenbus">
-                <h2>Post</h2>
-                <p>Stuur je brief naar de Wurzels</p>
-            </div>
+            <div class="mail-grid">
 
+                <article class="mail-card">
+                    <div class="mail-icon">🐿️</div>
+                    <h3>Een brief van Sam</h3>
+                    <p>
+                        Hoi bosvriend!
+                        Vandaag heb ik wel tien
+                        nootjes gevonden!
+                        Wat vind jij leuk om
+                        buiten te zoeken?
+                    </p>
+                    <span>Groetjes, Sam 🌰</span>
+                </article>
+
+                <article class="mail-card">
+                    <div class="mail-icon">🐻</div>
+                    <h3>Een brief van Bram</h3>
+                    <p>
+                        Hallo vriendje!
+                        Ik heb vandaag heerlijk
+                        in het bos gespeeld.
+                        Wat is jouw favoriete
+                        spelletje?
+                    </p>
+                    <span>Een berenknuffel, Bram 🐻</span>
+                </article>
+
+                <article class="mail-card">
+                    <div class="mail-icon">🐰</div>
+                    <h3>Een brief van Luna</h3>
+                    <p>
+                        Hoi hoi!
+                        Ik heb een prachtige
+                        bloem gevonden!
+                        Welke kleur bloem
+                        vind jij het mooist?
+                    </p>
+                    <span>Liefs, Luna 🌸</span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- TIJDSCHRIFT -->
+        <section class="magazine-post">
+            <div class="magazine-content">
+                <div class="magazine-emoji">📖 💌</div>
+                <h2>Komt jouw brief in ons tijdschrift?</h2>
+                <p>
+                    Misschien kiezen de Wurzels jouw
+                    leuke vraag of verhaal uit voor
+                    het volgende tijdschrift!
+                </p>
+                <p>
+                    We vragen eerst toestemming
+                    aan je ouder of verzorger.
+                </p>
+                <a href="tijdschriften.html"
+                   class="wood-button">
+                    Ontdek ons tijdschrift →
+                </a>
+            </div>
         </section>
 
     </main>
 
     <footer class="site-footer">
-        <p>Met liefde gemaakt door de Wurzels</p>
+        <p>🌿 Met liefde gemaakt door de Wurzels 🌿</p>
+        <a href="contact.html">Contact</a>
         <p class="copyright">© 2026 de Wurzels</p>
     </footer>
 
-    </body>
+</body>
 </html>
-
