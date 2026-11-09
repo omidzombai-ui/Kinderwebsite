@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kleurplaten | de Wurzels</title>
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="kleurplaten.css">
+
+    <script src="home.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a href="home.html" class="logo">🌿 de Wurzels 🌿</a>
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Menu openen"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >☰</button>
+
+        <nav
+            class="navigation"
+            id="navigation"
+            aria-label="Hoofdnavigatie"
+        >
+            <a href="home.html">🏡 Home</a>
+            <a href="verjaardag.html">🎂 Verjaardag</a>
+
+            <a
+                href="kleurplaten.html"
+                class="active"
+                aria-current="page"
+            >
+                🎨 Kleurplaten
+            </a>
+
+            <a href="berichten.html">✉️ Post</a>
+            <a href="puzzels.html">🧩 Puzzels</a>
+            <a href="tijdschriften.html">📖 Tijdschrift</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="kleurplatentitel">
+            <div class="sunshine" aria-hidden="true"></div>
+
+            <div class="welcome-sign">
+                <span class="leaf" aria-hidden="true">🍃</span>
+                <p class="eyebrow">Geef het bos jouw kleuren</p>
+
+                <h1 id="kleurplatentitel">Kleur mee met de Wurzels!</h1>
+
+                <p class="welcome-text">
+                    Haal je kleurpotloden maar tevoorschijn!
+                    Kies een kleurplaat van jouw favoriete diertje,
+                    download de tekening en maak er iets moois van.
+                </p>
+
+                <a class="wood-button" href="#kleurplaten">
+                    Kies jouw kleurplaat 🎨
+                </a>
+            </div>
+
+            <div class="forest-scene">
+                <div class="bird" aria-hidden="true">🐦</div>
+                <div class="butterfly" aria-hidden="true">🦋</div>
+
+                <div class="animal animal-left">
+                    <span aria-hidden="true">🐿️</span>
+                    <small>Sam de eekhoorn</small>
+                </div>
+
+                <div class="animal animal-center">
+                    <span aria-hidden="true">🐻</span>
+                    <small>Bram de beer</small>
+                </div>
+
+                <div class="animal animal-right">
+                    <span aria-hidden="true">🐰</span>
+                    <small>Luna het konijntje</small>
+                </div>
+
+                <div class="mushroom" aria-hidden="true">🍄</div>
+                <div class="flower flower-one" aria-hidden="true">🌼</div>
+                <div class="flower flower-two" aria-hidden="true">🎨</div>
+            </div>
+
+            <div class="grass" aria-hidden="true"></div>
+        </section>
+
+        <section
+            class="coloring-page"
+            id="kleurplaten"
+            aria-labelledby="overzichttitel"
+        >
+            <div class="section-heading">
+                <span aria-hidden="true">🌼 🎨 🌼</span>
+                <h2 id="overzichttitel">Welke kleurplaat kies jij?</h2>
+
+                <p>
+                    Download een kleurplaat, print hem uit
+                    en geef de Wurzels jouw favoriete kleuren.
+                </p>
+            </div>
+
+            <div class="coloring-grid">
+                <article class="coloring-card">
+                    <div class="coloring-image">
+                        <img
+                            src="images/kleurplaat-sam.png"
+                            alt="Kleurplaat van Sam de eekhoorn"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="coloring-content">
+                        <h3>Sam de eekhoorn</h3>
+                        <p>Welke kleuren geef jij Sam?</p>
+
+                        <a
+                            class="wood-button"
+                            href="images/kleurplaat-sam.png"
+                            download="kleurplaat-sam.png"
+                        >
+                            Download Sam
+                        </a>
+                    </div>
+                </article>
+
+                <article class="coloring-card">
+                    <div class="coloring-image">
+                        <img
+                            src="images/kleurplaat-bram.png"
+                            alt="Kleurplaat van Bram de beer"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="coloring-content">
+                        <h3>Bram de beer</h3>
+                        <p>Maak een vrolijke tekening van Bram.</p>
+
+                        <a
+                            class="wood-button"
+                            href="images/kleurplaat-bram.png"
+                            download="kleurplaat-bram.png"
+                        >
+                            Download Bram
+                        </a>
+                    </div>
+                </article>
+
+                <article class="coloring-card">
+                    <div class="coloring-image">
+                        <img
+                            src="images/kleurplaat-luna.png"
+                            alt="Kleurplaat van Luna het konijntje"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="coloring-content">
+                        <h3>Luna het konijntje</h3>
+                        <p>Pak je potloden en kleur Luna in.</p>
+
+                        <a
+                            class="wood-button"
+                            href="images/kleurplaat-luna.png"
+                            download="kleurplaat-luna.png"
+                        >
+                            Download Luna
+                        </a>
+                    </div>
+                </article>
+
+                <article class="coloring-card">
+                    <div class="coloring-image">
+                        <img
+                            src="images/kleurplaat-samen.png"
+                            alt="Kleurplaat van de Wurzels samen"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="coloring-content">
+                        <h3>De Wurzels samen</h3>
+                        <p>Geef alle vriendjes een kleurrijk avontuur.</p>
+
+                        <a
+                            class="wood-button"
+                            href="images/kleurplaat-samen.png"
+                            download="kleurplaat-samen.png"
+                        >
+                            Download de vriendjes
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="coloring-help" aria-labelledby="uitlegtitel">
+            <span class="help-icon" aria-hidden="true">✏️</span>
+
+            <div>
+                <h2 id="uitlegtitel">Zo begin je!</h2>
+
+                <ol>
+                    <li>Kies jouw favoriete kleurplaat.</li>
+                    <li>Klik op de downloadknop.</li>
+                    <li>Vraag een ouder of verzorger om te helpen met printen.</li>
+                    <li>Pak je potloden en kleur erop los!</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌿 Met liefde gemaakt door de Wurzels 🌿</p>
+        <a href="contact.html">Contact</a>
+        <p class="copyright">© 2026 de Wurzels</p>
+    </footer>
+</body>
+</html>
