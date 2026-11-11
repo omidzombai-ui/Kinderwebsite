@@ -1,0 +1,42 @@
+/* Basisindeling van de tijdschriftpagina */
+.tijdschrift-pagina {
+    min-height: 60vh;
+    padding: 60px 6%;
+    background: radial-gradient(ellipse at top, #e1efc6, #fff8e8);
+}
+
+.tijdschrift-intro {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tijdschrift-icoon {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 3.5rem;
+}
+
+.tijdschrift-intro h1 {
+    margin-bottom: 16px;
+    color: var(--forest);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+}
+
+.tijdschrift-intro p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--dark-forest);
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .tijdschrift-pagina {
+        padding: 40px 18px;
+    }
+}

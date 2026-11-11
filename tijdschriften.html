@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tijdschrift | de Wurzels</title>
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="tijdschriften.css">
+    <script src="home.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a href="home.html" class="logo">🌿 de Wurzels 🌿</a>
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Menu openen"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >☰</button>
+
+        <nav
+            class="navigation"
+            id="navigation"
+            aria-label="Hoofdnavigatie"
+        >
+            <a href="home.html">🏡 Home</a>
+            <a href="verjaardag.html">🎂 Verjaardag</a>
+            <a href="kleurplaten.html">🎨 Kleurplaten</a>
+            <a href="berichten.html">✉️ Post</a>
+            <a href="puzzels.html">🧩 Puzzels</a>
+
+            <a
+                href="tijdschriften.html"
+                class="active"
+                aria-current="page"
+            >
+                📖 Tijdschrift
+            </a>
+        </nav>
+    </header>
+
+    <main class="tijdschrift-pagina">
+        <section
+            class="tijdschrift-intro"
+            aria-labelledby="tijdschrifttitel"
+        >
+            <span class="tijdschrift-icoon" aria-hidden="true">📖</span>
+            <h1 id="tijdschrifttitel">Het Wurzels-tijdschrift</h1>
+
+            <p>
+                Hier ontdek je binnenkort de tijdschriften
+                van de Wurzels.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌿 Met liefde gemaakt door de Wurzels 🌿</p>
+        <a href="contact.html">Contact</a>
+        <p class="copyright">© 2026 de Wurzels</p>
+    </footer>
+</body>
+</html>
