@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="tijdschriften.css">
+
     <script src="home.js" defer></script>
     <script src="tijdschriften.js" defer></script>
 </head>
@@ -50,12 +51,184 @@
             aria-labelledby="tijdschrifttitel"
         >
             <span class="tijdschrift-icoon" aria-hidden="true">📖</span>
-            <h1 id="tijdschrifttitel">Het Wurzels-tijdschrift</h1>
+
+            <p class="eyebrow">Elke maand een nieuw avontuur</p>
+
+            <h1 id="tijdschrifttitel">Lees mee met de Wurzels!</h1>
 
             <p>
-                Hier ontdek je binnenkort de tijdschriften
-                van de Wurzels.
+                Ontdek iedere maand een nieuw Wurzels-tijdschrift.
+                Beleef avonturen met de diertjes en ontdek
+                wat er allemaal gebeurt in hun bos.
             </p>
+
+            <div class="tijdschrift-uitleg">
+                <h2>Verzamel de puzzelstukjes</h2>
+
+                <p>
+                    Bij de tijdschriften zitten puzzelstukjes.
+                    Verzamel ze om de plattegrond compleet te maken.
+                    De plattegrond is apart te koop.
+                </p>
+            </div>
+        </section>
+
+        <section
+            class="tijdschrift-overzicht"
+            aria-labelledby="overzichttitel"
+        >
+            <h2 id="overzichttitel">Ontdek onze tijdschriften</h2>
+
+            <p class="overzicht-uitleg">
+                Hier komen de beschikbare uitgaven
+                van het Wurzels-tijdschrift.
+            </p>
+
+            <div class="tijdschrift-grid">
+                <article class="tijdschrift-kaart">
+                    <div class="omslag-placeholder">
+                        <span aria-hidden="true">📖</span>
+                        <p>Hier komt de tijdschriftomslag</p>
+                    </div>
+
+                    <div class="tijdschrift-inhoud">
+                        <p class="uitgave-label">Voorbeelduitgave</p>
+                        <h3>Het Wurzels-tijdschrift</h3>
+
+                        <p>
+                            De titel, inhoud en verschijningsmaand
+                            worden toegevoegd zodra deze bekend zijn.
+                        </p>
+
+                        <p class="tijdschrift-prijs">Prijs volgt</p>
+
+                        <button
+                            class="wood-button"
+                            type="button"
+                            disabled
+                        >
+                            Bestellen nog niet beschikbaar
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="verzamelplan" aria-labelledby="verzameltitel">
+            <div class="section-heading">
+                <span aria-hidden="true">🗺️ 🧩</span>
+
+                <h2 id="verzameltitel">
+                    Maak de plattegrond compleet!
+                </h2>
+
+                <p>
+                    Verzamel de puzzelstukjes
+                    bij de Wurzels-tijdschriften.
+                </p>
+            </div>
+
+            <ol class="verzamelstappen">
+                <li>
+                    <span class="stap-icoon" aria-hidden="true">🗺️</span>
+
+                    <h3>Koop de plattegrond</h3>
+
+                    <p>
+                        De plattegrond is apart te koop en vormt
+                        de basis van jouw verzameling.
+                    </p>
+                </li>
+
+                <li>
+                    <span class="stap-icoon" aria-hidden="true">📖</span>
+
+                    <h3>Verzamel puzzelstukjes</h3>
+
+                    <p>
+                        Bij de tijdschriften zitten puzzelstukjes
+                        voor jouw plattegrond.
+                    </p>
+                </li>
+
+                <li>
+                    <span class="stap-icoon" aria-hidden="true">🧩</span>
+
+                    <h3>Maak de plattegrond compleet</h3>
+
+                    <p>
+                        Bewaar de stukjes en voeg ze toe
+                        aan jouw plattegrond.
+                    </p>
+                </li>
+            </ol>
+
+            <p class="plattegrond-status">
+                De prijs en bestelmogelijkheid
+                van de plattegrond volgen nog.
+            </p>
+        </section>
+
+        <section class="bestellen" aria-labelledby="besteltitel">
+            <h2 id="besteltitel">Probeer het bestellen</h2>
+
+            <p id="besteluitleg">
+                Dit is een demonstratie met voorbeeldproducten.
+                Er wordt geen bestelling geplaatst en niets betaald.
+            </p>
+
+            <form
+                id="bestelformulier"
+                aria-describedby="besteluitleg"
+            >
+                <div class="bestelveld">
+                    <label for="product">Product</label>
+
+                    <select id="product" name="product" required>
+                        <option value="">Kies een product</option>
+
+                        <option value="tijdschrift">
+                            Wurzels-tijdschrift — voorbeeld
+                        </option>
+
+                        <option value="plattegrond">
+                            Verzamelplattegrond — voorbeeld
+                        </option>
+                    </select>
+                </div>
+
+                <div class="bestelveld">
+                    <label for="aantal">Aantal</label>
+
+                    <input
+                        type="number"
+                        id="aantal"
+                        name="aantal"
+                        min="1"
+                        max="10"
+                        step="1"
+                        value="1"
+                        required
+                    >
+                </div>
+
+                <button
+                    class="wood-button"
+                    id="bestelknop"
+                    type="submit"
+                    disabled
+                >
+                    Testbestelling bekijken
+                </button>
+
+                <p id="bestelmelding" role="status"></p>
+            </form>
+
+            <noscript>
+                <p>
+                    Zet JavaScript aan om de testbestelling te bekijken.
+                </p>
+            </noscript>
         </section>
     </main>
 
@@ -64,147 +237,5 @@
         <a href="contact.html">Contact</a>
         <p class="copyright">© 2026 de Wurzels</p>
     </footer>
-    <section
-    class="tijdschrift-intro"
-    aria-labelledby="tijdschrifttitel"
->
-    <span class="tijdschrift-icoon" aria-hidden="true">📖</span>
-
-    <p class="eyebrow">Elke maand een nieuw avontuur</p>
-
-    <h1 id="tijdschrifttitel">Lees mee met de Wurzels!</h1>
-
-    <p>
-        Ontdek iedere maand een nieuw Wurzels-tijdschrift.
-        Beleef avonturen met de diertjes en ontdek
-        wat er allemaal gebeurt in hun bos.
-    </p>
-
-    <div class="tijdschrift-uitleg">
-        <h2>Verzamel de puzzelstukjes</h2>
-
-        <p>
-            Bij de tijdschriften zitten puzzelstukjes.
-            Verzamel ze om de plattegrond compleet te maken.
-            De plattegrond is apart te koop.
-        </p>
-    </div>
-</section>
-<section class="tijdschrift-overzicht" aria-labelledby="overzichttitel">
-    <h2 id="overzichttitel">Ontdek onze tijdschriften</h2>
-
-    <p class="overzicht-uitleg">
-        Hier komen de beschikbare uitgaven van het Wurzels-tijdschrift.
-    </p>
-
-    <div class="tijdschrift-grid">
-        <article class="tijdschrift-kaart">
-            <div class="omslag-placeholder">
-                <span aria-hidden="true">📖</span>
-                <p>Hier komt de tijdschriftomslag</p>
-            </div>
-
-            <div class="tijdschrift-inhoud">
-                <p class="uitgave-label">Voorbeelduitgave</p>
-                <h3>Het Wurzels-tijdschrift</h3>
-
-                <p>
-                    De titel, inhoud en verschijningsmaand
-                    worden toegevoegd zodra deze bekend zijn.
-                </p>
-
-                <p class="tijdschrift-prijs">Prijs volgt</p>
-
-                <button class="wood-button" type="button" disabled>
-                    Bestellen nog niet beschikbaar
-                </button>
-            </div>
-        </article>
-    </div>
-</section>
-<section class="verzamelplan" aria-labelledby="verzameltitel">
-    <div class="section-heading">
-        <span aria-hidden="true">🗺️ 🧩</span>
-        <h2 id="verzameltitel">Maak de plattegrond compleet!</h2>
-        <p>Verzamel de puzzelstukjes bij de Wurzels-tijdschriften.</p>
-    </div>
-
-    <ol class="verzamelstappen">
-        <li>
-            <span class="stap-icoon" aria-hidden="true">🗺️</span>
-            <h3>Koop de plattegrond</h3>
-            <p>
-                De plattegrond is apart te koop en vormt
-                de basis van jouw verzameling.
-            </p>
-        </li>
-
-        <li>
-            <span class="stap-icoon" aria-hidden="true">📖</span>
-            <h3>Verzamel puzzelstukjes</h3>
-            <p>
-                Bij de tijdschriften zitten puzzelstukjes
-                voor jouw plattegrond.
-            </p>
-        </li>
-
-        <li>
-            <span class="stap-icoon" aria-hidden="true">🧩</span>
-            <h3>Maak de plattegrond compleet</h3>
-            <p>
-                Bewaar de stukjes en voeg ze toe
-                aan jouw plattegrond.
-            </p>
-        </li>
-    </ol>
-
-    <p class="plattegrond-status">
-        De prijs en bestelmogelijkheid van de plattegrond volgen nog.
-    </p>
-</section>
-<section class="bestellen" aria-labelledby="besteltitel">
-    <h2 id="besteltitel">Probeer het bestellen</h2>
-
-    <p id="besteluitleg">
-        Dit is een demonstratie met een voorbeelduitgave.
-        Er wordt geen bestelling geplaatst en niets betaald.
-    </p>
-
-    <form id="bestelformulier" aria-describedby="besteluitleg">
-        <div class="bestelveld">
-            <label for="product">Product</label>
-            <select id="product" name="product" required>
-                <option value="">Kies een product</option>
-                <option value="tijdschrift">Wurzels-tijdschrift — voorbeeld</option>
-                <option value="plattegrond">Verzamelplattegrond — voorbeeld</option>
-            </select>
-        </div>
-
-        <div class="bestelveld">
-            <label for="aantal">Aantal</label>
-            <input
-                type="number"
-                id="aantal"
-                name="aantal"
-                min="1"
-                max="10"
-                step="1"
-                value="1"
-                required
-            >
-        </div>
-
-        <button class="wood-button" id="bestelknop" type="submit" disabled>
-            Testbestelling bekijken
-        </button>
-
-        <p id="bestelmelding" role="status"></p>
-    </form>
-
-    <noscript>
-        <p>Zet JavaScript aan om de testbestelling te bekijken.</p>
-    </noscript>
-</section>
-
 </body>
 </html>
