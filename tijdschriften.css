@@ -158,3 +158,53 @@ button:focus-visible {
     transform: none;
     box-shadow: 0 4px 0 #8a592d;
 }
+
+/* Uitleg over de verzamelplattegrond */
+.verzamelplan {
+    max-width: 1100px;
+    margin: 65px auto 0;
+}
+
+.verzamelstappen {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    padding: 0;
+    list-style: none;
+}
+
+.verzamelstappen li {
+    min-width: 0;
+    padding: 24px;
+    border: 3px solid #a9c47c;
+    border-radius: 18px 26px;
+    background: #e5efc9;
+    box-shadow: 0 5px 0 #b9a375;
+}
+
+.stap-icoon {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 3rem;
+}
+
+.verzamelstappen h3 {
+    margin-bottom: 10px;
+    color: var(--forest);
+    font-size: 1.4rem;
+}
+
+.verzamelstappen p {
+    line-height: 1.6;
+}
+
+.plattegrond-status {
+    margin-top: 28px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .verzamelstappen {
+        grid-template-columns: 1fr;
+    }
+}
