@@ -208,3 +208,84 @@ button:focus-visible {
         grid-template-columns: 1fr;
     }
 }
+
+/* Demonstratie van bestellen */
+.bestellen {
+    max-width: 760px;
+    margin: 60px auto 0;
+    padding: 28px;
+    border: 3px solid #d8b16c;
+    border-radius: 18px 26px;
+    background: var(--paper);
+    box-shadow: 0 6px 0 #b9a375;
+}
+
+.bestellen h2 {
+    margin-bottom: 12px;
+    color: var(--forest);
+    font-size: 1.8rem;
+}
+
+#besteluitleg {
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.bestelveld {
+    margin-bottom: 20px;
+}
+
+.bestelveld label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.bestelveld input,
+.bestelveld select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 2px solid #b99a66;
+    border-radius: 10px;
+    background: #ffffff;
+    color: var(--brown);
+    font: inherit;
+}
+
+.bestelveld input:focus-visible,
+.bestelveld select:focus-visible {
+    outline: 3px solid var(--dark-forest);
+    outline-offset: 4px;
+}
+
+.bestellen button {
+    max-width: 100%;
+    font: inherit;
+    cursor: pointer;
+}
+
+.bestellen button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.bestellen button:disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 0 #8a592d;
+}
+
+#bestelmelding:not(:empty) {
+    margin-top: 24px;
+    padding: 16px;
+    border: 2px solid #a9c47c;
+    border-radius: 12px;
+    background: #e5efc9;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .bestellen {
+        padding: 20px 16px;
+    }
+}

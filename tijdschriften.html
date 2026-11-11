@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="tijdschriften.css">
     <script src="home.js" defer></script>
+    <script src="tijdschriften.js" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -161,5 +162,49 @@
         De prijs en bestelmogelijkheid van de plattegrond volgen nog.
     </p>
 </section>
+<section class="bestellen" aria-labelledby="besteltitel">
+    <h2 id="besteltitel">Probeer het bestellen</h2>
+
+    <p id="besteluitleg">
+        Dit is een demonstratie met een voorbeelduitgave.
+        Er wordt geen bestelling geplaatst en niets betaald.
+    </p>
+
+    <form id="bestelformulier" aria-describedby="besteluitleg">
+        <div class="bestelveld">
+            <label for="product">Product</label>
+            <select id="product" name="product" required>
+                <option value="">Kies een product</option>
+                <option value="tijdschrift">Wurzels-tijdschrift — voorbeeld</option>
+                <option value="plattegrond">Verzamelplattegrond — voorbeeld</option>
+            </select>
+        </div>
+
+        <div class="bestelveld">
+            <label for="aantal">Aantal</label>
+            <input
+                type="number"
+                id="aantal"
+                name="aantal"
+                min="1"
+                max="10"
+                step="1"
+                value="1"
+                required
+            >
+        </div>
+
+        <button class="wood-button" id="bestelknop" type="submit" disabled>
+            Testbestelling bekijken
+        </button>
+
+        <p id="bestelmelding" role="status"></p>
+    </form>
+
+    <noscript>
+        <p>Zet JavaScript aan om de testbestelling te bekijken.</p>
+    </noscript>
+</section>
+
 </body>
 </html>
