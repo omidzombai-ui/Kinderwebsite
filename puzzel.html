@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzels - de Wurzels</title>
+    <link rel="stylesheet" href="puzzels.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">🌳 de Wurzels</a>
+
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="verjaardag.html">Verjaardag</a>
+            <a href="kleurplaten.html">Kleurplaten</a>
+            <a href="berichten.html">Post</a>
+            <a href="puzzels.html" class="active">Puzzels</a>
+            <a href="tijdschriften.html">Tijdschrift</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="animals">
+                <span>🦊</span>
+                <span>🐻</span>
+                <span>🐰</span>
+            </div>
+
+            <div class="puzzle-card">
+                <div class="small-title">🧩 Ontdek en verzamel!</div>
+                <h1>Het Wurzelbos puzzelspel</h1>
+
+                <p>
+                    Wil jij ook de plattegrond van het Wurzelbos compleet maken?
+                    Verzamel alle puzzelstukjes en ontdek het hele Wurzelbos!
+                </p>
+
+                <div class="map">
+                    <div class="map-title">🌲 Plattegrond van het Wurzelbos 🌲</div>
+
+                    <div class="map-grid">
+                        <div class="map-piece">🌳</div>
+                        <div class="map-piece">🏡</div>
+                        <div class="map-piece">🌻</div>
+                        <div class="map-piece">🍄</div>
+                    </div>
+
+                    <p class="map-caption">
+                        Verzamel de stukjes en ontdek alle plekken!
+                    </p>
+                </div>
+
+                <h2>Verzamel jouw puzzelstukjes</h2>
+                <p>
+                    Bij ieder tijdschrift kun je een puzzelstukje verzamelen.
+                    Klik hieronder op de stukjes die je al hebt.
+                </p>
+
+                <div class="pieces">
+                    <label class="piece">
+                        <input type="checkbox" class="puzzle-check">
+                        <span>🧩</span>
+                        <small>Stukje 1</small>
+                    </label>
+
+                    <label class="piece">
+                        <input type="checkbox" class="puzzle-check">
+                        <span>🧩</span>
+                        <small>Stukje 2</small>
+                    </label>
+
+                    <label class="piece">
+                        <input type="checkbox" class="puzzle-check">
+                        <span>🧩</span>
+                        <small>Stukje 3</small>
+                    </label>
+
+                    <label class="piece">
+                        <input type="checkbox" class="puzzle-check">
+                        <span>🧩</span>
+                        <small>Stukje 4</small>
+                    </label>
+                </div>
+
+                <div class="progress-area">
+                    <p id="progress-text">Je hebt 0 van de 4 stukjes verzameld.</p>
+                    <div class="progress-bar">
+                        <div id="progress-fill"></div>
+                    </div>
+                </div>
+
+                <a href="tijdschriften.html" class="button">
+                    Bekijk de tijdschriften
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>🌳 De Wurzels - Samen op avontuur in het Wurzelbos!</p>
+    </footer>
+
+    <script src="puzzels.js"></script>
+</body>
+</html>
