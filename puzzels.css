@@ -307,6 +307,12 @@ a {
     text-align: center;
 }
 
+.site-footer a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: underline;
+}
+
 /* Animaties */
 
 @keyframes bounce {
