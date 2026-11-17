@@ -10,7 +10,6 @@ Ik heb HTML gebruikt voor de structuur, CSS voor het ontwerp en JavaScript voor 
 - Ik heb de kleuren en achtergrond aangepast.
 - De puzzelstukjes en voortgangsbalk toegevoegd.
 - Ik heb links naar de andere pagina's gemaakt.
-- Ik heb onderaan een contactknop toegevoegd.
 
 ## Wat was moeilijk?
 Het was soms lastig om de CSS goed aan te passen. Ook moest ik controleren of alle links naar de juiste pagina's gingen.
